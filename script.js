@@ -15,6 +15,8 @@ while ((parseInt(saludo) !== revista) && (parseInt(saludo) !== libros) && (parse
     saludo = prompt("Selecciona el producto de tu preferencia.\n " + "\nPor Ejemplo '1' para Revista " + "\n\n1-Revista" + "\n2-Libros" + "\n3-Gorras" + "\n4-Tazas")
 }
 
+let montoRevista = 800;
+
 if (saludo == 1) {
 
     let enero = 1;
@@ -24,51 +26,152 @@ if (saludo == 1) {
     let septiembre = 5;
     let Noviembre = 6;
 
+  
+
     let opcionRevista = prompt("Elige la edicion mensual de tu preferencia.\n " + "\n1-Enero" + "\n2-Marzo" + "\n3-Mayo" + "\n4-Julio" + "\n5-Septiembre" + "\n6-Noviembre");
-    if (opcionRevista == 1) {
-        alert("Enero es nuestra 'Primera Edicion'")
-    }
-
-
-    if (opcionRevista == 2) {
-        alert("Marzo es nuestra edicion de 'Aprende a Progrmar'")
-    }
-
-    if (opcionRevista == 3) {
-        alert("Mayo es nuestra edicion  de 'Planeta verde'")
-    }
-    if (opcionRevista == 4) {
-        alert("Julio es nuestra edicion  de 'James Webb'")
-    }
-    if (opcionRevista == 5) {
-        alert("Septiembre es nuestra edicion  de 'Criptomonedas en Argentina'")
-    }
-    if (opcionRevista == 6) {
-        alert("Noviembre es nuestra edicion  de 'Inteligencia Artificial'")
-
-    }
 
     while ((parseInt(opcionRevista) !== enero) && (parseInt(opcionRevista) !== Marzo) && (parseInt(opcionRevista) !== mayo) && (parseInt(opcionRevista) !== julio) && (parseInt(opcionRevista) !== septiembre) && (parseInt(opcionRevista) !== Noviembre)) {
         opcionRevista = prompt("Elige la edicion mensual de tu preferencia.\n " + "\n1-Enero" + "\n2-Marzo" + "\n3-Mayo" + "\n4-Julio" + "\n5-Septiembre" + "\n6-Noviembre");
     }
 
 
+    if (opcionRevista == 1) {
+        alert("Enero es nuestra 'Primera Edicion'");
+
+        
     alert("Las revistas tiene un costo de $800 pesos");
     
-    let cantidadRevista = prompt("indica la cantidad de Revista que deseas")
+    let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
     let suma = parseInt(cantidadRevista) * 800;
-    alert(" El monto a pagar es " + suma)
+    alert(" El monto a pagar es " + suma);
 
     let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-    let montoRevista = 800;
+    
+   
 
-    if (pago < montoRevista) {
+    if (pago < suma) {
         alert("Tu Saldo es insuficiente para la compra")
     }
 
-    if (pago >= montoRevista) {
+    if (pago >= suma) {
 
         alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+    }
+
+    }
+
+
+    if (opcionRevista == 2) {
+        alert("Marzo es nuestra edicion de 'Aprende a Progrmar'");
+            
+    alert("Las revistas tiene un costo de $800 pesos");
+    
+    let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+    let suma = parseInt(cantidadRevista) * 800;
+    alert(" El monto a pagar es " + suma);
+
+    let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+    
+   
+
+    if (pago < suma) {
+        alert("Tu Saldo es insuficiente para la compra")
+    }
+
+    if (pago >= suma) {
+
+        alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+    }
+    }
+
+    if (opcionRevista == 3) {
+        alert("Mayo es nuestra edicion  de 'Planeta verde'");
+            
+    alert("Las revistas tiene un costo de $800 pesos");
+    
+    let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+    let suma = parseInt(cantidadRevista) * 800;
+    alert(" El monto a pagar es " + suma);
+
+    let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+    
+   
+
+    if (pago < suma) {
+        alert("Tu Saldo es insuficiente para la compra")
+    }
+
+    if (pago >= suma) {
+
+        alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+    }
+    }
+    if (opcionRevista == 4) {
+        alert("Julio es nuestra edicion  de 'James Webb'")
+            
+    alert("Las revistas tiene un costo de $800 pesos");
+    
+    let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+    let suma = parseInt(cantidadRevista) * 800;
+    alert(" El monto a pagar es " + suma);
+
+    let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+    
+   
+
+    if (pago < suma) {
+        alert("Tu Saldo es insuficiente para la compra")
+    }
+
+    if (pago >= suma) {
+
+        alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+    }
+    }
+    if (opcionRevista == 5) {
+        alert("Septiembre es nuestra edicion  de 'Criptomonedas en Argentina'");
+            
+    alert("Las revistas tiene un costo de $800 pesos");
+    
+    let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+    let suma = parseInt(cantidadRevista) * 800;
+    alert(" El monto a pagar es " + suma);
+
+    let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+    
+   
+
+    if (pago < suma) {
+        alert("Tu Saldo es insuficiente para la compra")
+    }
+
+    if (pago >= suma) {
+
+        alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+    }
+    }
+    if (opcionRevista == 6) {
+        alert("Noviembre es nuestra edicion  de 'Inteligencia Artificial'");
+            
+    alert("Las revistas tiene un costo de $800 pesos");
+    
+    let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+    let suma = parseInt(cantidadRevista) * 800;
+    alert(" El monto a pagar es " + suma);
+
+    let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+    
+   
+
+    if (pago < suma) {
+        alert("Tu Saldo es insuficiente para la compra")
+    }
+
+    if (pago >= suma) {
+
+        alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+    }
+
     }
 
 
