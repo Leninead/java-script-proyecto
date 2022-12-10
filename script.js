@@ -4,7 +4,7 @@ alert("Somos Ciencia Magazine")
 let nombre = prompt("Ingrese su nombre");
 let apellido = prompt("Ingrese su apellido");
 
-if ((nombre == "") && (apellido == "")) {
+while ((nombre == "") && (apellido == "")) {
     alert("Necesitas rellenar el campo de nombre y apellido para continuar la operacion")
     nombre = prompt("Ingrese su nombre");
     apellido = prompt("Ingrese su apellido");
@@ -43,20 +43,29 @@ if (saludo == 1) {
 
 
 
-    if (opcionRevista == 1) {
-        alert("Enero es nuestra 'Primera Edicion'");
+    let precio = 800;
 
 
+    function meses(enero) {
         alert("Las revistas tiene un costo de $800 pesos");
 
 
         let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-
+        
+        
+        while (isNaN(parseInt(cantidadRevista) ) ) {
+            alert("Necesitas agregar una cantidad numerica");
+            cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+         
+        }
+       
         while ((parseInt(cantidadRevista) <= 0)) {
             alert("tienes que elegir al menos 1 revista para seguir la compra. Gracias");
             cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+        
         }
-        let suma = parseInt(cantidadRevista) * 800;
+
+        let suma = parseInt(cantidadRevista) * precio;
 
         alert(" El monto a pagar es " + suma);
 
@@ -68,10 +77,22 @@ if (saludo == 1) {
             alert("Tu Saldo es insuficiente para la compra")
         }
 
+
+
+
+
         if (pago >= suma) {
 
             alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
         }
+    }
+
+
+    if (opcionRevista == 1) {
+        alert("Enero es nuestra 'Primera Edicion'");
+        meses();
+
+
 
     }
 
@@ -79,146 +100,75 @@ if (saludo == 1) {
     if (opcionRevista == 2) {
         alert("Marzo es nuestra edicion de 'Aprende a Progrmar'");
 
-        alert("Las revistas tiene un costo de $800 pesos");
-
-        let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-        while (parseInt(cantidadRevista) <= 0) {
-            alert("tienes que elegir al menos 1 revista para seguir la compra. Gracias");
-            cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-        }
-        let suma = parseInt(cantidadRevista) * 800;
-        alert(" El monto a pagar es " + suma);
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-
-
-        if (pago < suma) {
-            alert("Tu Saldo es insuficiente para la compra")
-        }
-
-        if (pago >= suma) {
-
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+        meses();
     }
 
     if (opcionRevista == 3) {
+
         alert("Mayo es nuestra edicion  de 'Planeta verde'");
-
-        alert("Las revistas tiene un costo de $800 pesos");
-
-        let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-        while (parseInt(cantidadRevista) <= 0) {
-            alert("tienes que elegir al menos 1 revista para seguir la compra. Gracias");
-            cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-        }
-        let suma = parseInt(cantidadRevista) * 800;
-        alert(" El monto a pagar es " + suma);
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-
-
-        if (pago < suma) {
-            alert("Tu Saldo es insuficiente para la compra")
-        }
-
-        if (pago >= suma) {
-
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+        meses();
     }
+
     if (opcionRevista == 4) {
         alert("Julio es nuestra edicion  de 'James Webb'")
-
-        alert("Las revistas tiene un costo de $800 pesos");
-
-        let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-        while (parseInt(cantidadRevista) <= 0) {
-            alert("tienes que elegir al menos 1 revista para seguir la compra. Gracias");
-            cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-        }
-        let suma = parseInt(cantidadRevista) * 800;
-        alert(" El monto a pagar es " + suma);
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-
-
-        if (pago < suma) {
-            alert("Tu Saldo es insuficiente para la compra")
-        }
-
-        if (pago >= suma) {
-
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+        meses();
     }
     if (opcionRevista == 5) {
         alert("Septiembre es nuestra edicion  de 'Criptomonedas en Argentina'");
 
-        alert("Las revistas tiene un costo de $800 pesos");
-
-        let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-        while (parseInt(cantidadRevista) <= 0) {
-            alert("tienes que elegir al menos 1 revista para seguir la compra. Gracias");
-            cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-        }
-        let suma = parseInt(cantidadRevista) * 800;
-        alert(" El monto a pagar es " + suma);
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-
-
-        if (pago < suma) {
-            alert("Tu Saldo es insuficiente para la compra")
-        }
-
-        if (pago >= suma) {
-
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+        meses();
     }
     if (opcionRevista == 6) {
         alert("Noviembre es nuestra edicion  de 'Inteligencia Artificial'");
 
-        alert("Las revistas tiene un costo de $800 pesos");
-
-        let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-        while (parseInt(cantidadRevista) <= 0) {
-            alert("tienes que elegir al menos 1 revista para seguir la compra. Gracias");
-            cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-        }
-        let suma = parseInt(cantidadRevista) * 800;
-        alert(" El monto a pagar es " + suma);
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-
-
-        if (pago < suma) {
-            alert("Tu Saldo es insuficiente para la compra")
-        }
-
-        if (pago >= suma) {
-
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
-
+        meses();
     }
-
-
-
 
 }
 
+
+class libro {
+    constructor(edicion, precio) {
+        this.edicion = edicion.toLowerCase();
+        this.precio = parseFloat(precio);
+
+
+    }
+    toString() {
+        return this.edicion + " (" + this.precio.toFixed(2) + ")";
+    }
+   
+
+}
 
 let montoPlaneta = 1600;
 let montoUnivero = 1800;
 let montoBitcoin = 2000;
 let montoDiseno = 2200;
+
+
+let libro1 = new libro("Nuestro Planeta", montoPlaneta);
+console.log("este es el precio de la edicion " + libro1);
+
+
+let libro2 = new libro("Explorando el universo", montoUnivero)
+
+console.log("este es el precio de la edicion " + libro2);
+
+let libro3 = new libro("Descubriendo el bitcoin", montoBitcoin)
+
+console.log("este es el precio de la edicion " + libro3)
+
+let libro4 = new libro("Patrones de diseño", montoDiseno)
+
+console.log("este es el precio de la edicion " + libro4)
+
+
+let nuestroPlaneta = 1;
+    let universo = 2;
+    let bitcoin = 3;
+    let diseno = 4;
+
 
 if (saludo == 2) {
     let nuestroPlaneta = 1;
@@ -226,114 +176,66 @@ if (saludo == 2) {
     let bitcoin = 3;
     let diseno = 4;
 
-    let opcionLibros = prompt("Elige el libro de tu preferencia.\n " + "\n1-Nuestro Planeta" + "\n2-Explorando el universo" + "\n3-Descubriendo el bitcoin" + "\n4-Patrones de diseño");
+    let opcionLibros = prompt("Elige el libro de tu preferencia.\n " + "\n"+ nuestroPlaneta + "-" + libro1 + "\n" + universo + "-" + libro2 + "\n"+ bitcoin + "-" + libro3 + "\n" + diseno + "-" + libro4);
 
     while ((parseInt(opcionLibros) !== nuestroPlaneta) && (parseInt(opcionLibros) !== universo) && (parseInt(opcionLibros) !== bitcoin) && (parseInt(opcionLibros) !== diseno)) {
-        opcionLibros = prompt("Elige el libro de tu preferencia.\n " + "\n1-Nuestro Planeta" + "\n2-Explorndo el universo" + "\n3-Descubriendo el bitcoin" + "\n4-Patrones de diseño")
+        opcionLibros = prompt("Elige el libro de tu preferencia.\n " + "\n"+ nuestroPlaneta + "-" + libro1 + "\n" + universo + "-" + libro2 + "\n"+ bitcoin + "-" + libro3 + "\n" + diseno + "-" + libro4);
     }
-    if (opcionLibros == 1) {
+    function libroOption() {
+        let cantidadLibros = prompt("Indica la cantidad de libros que deseas.");
+
+        while (isNaN(parseInt(cantidadLibros) ) ) {
+            alert("Necesitas agregar una cantidad numerica");
+            cantidadLibros = prompt("indica la cantidad de Libros que deseas");
+         
+        }
+       
+        while ((parseInt(cantidadLibros) <= 0)) {
+            alert("tienes que elegir al menos 1 Libro para seguir la compra. Gracias");
+
+            cantidadLibros = prompt("indica la cantidad de Libros que deseas");
+        }
+
+        let suma = parseInt(cantidadLibros) * montoPlaneta;
+        alert("El monto a pagar es " + suma);
+
+        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+
+        if (pago < suma) {
+
+            alert("Tu Saldo es insuficiente para la compra")
+
+        }
+        if (pago >= suma) {
+
+            alert("Muchas gracias "+ nombre + " " + apellido + " " + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+        }
+    }
+
+    
+
+    if (opcionLibros ==  nuestroPlaneta) {
         alert("El costo del libro Nuestro Planeta es de $1600");
-
-        let cantidadLibros = prompt("Indica la cantidad de libros que deseas.");
-
-
-        while ((parseInt(cantidadLibros) <= 0)) {
-            alert("tienes que elegir al menos 1 Libro para seguir la compra. Gracias");
-            cantidadLibros = prompt("indica la cantidad de Libros que deseas");
-        }
-
-        let suma = parseInt(cantidadLibros) * 1600;
-        alert("El monto a pagar es " + suma);
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-
-
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
-
+        libroOption();
     }
 
-    if (opcionLibros == 2) {
+    if (opcionLibros == universo) {
         alert("El costo del libro Explorando el Universo es de $1800");
-        let cantidadLibros = prompt("Indica la cantidad de libros que deseas.");
-        while ((parseInt(cantidadLibros) <= 0)) {
-            alert("tienes que elegir al menos 1 Libro para seguir la compra. Gracias");
-            cantidadLibros = prompt("indica la cantidad de Libros que deseas");
-        }
-
-        let suma = parseInt(cantidadLibros) * 1800;
-
-        alert("El monto a pagar es " + suma);
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-
-
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+        libroOption();
     }
 
-    if (opcionLibros == 3) {
-        alert("El costo del libro Descubreindo el Bitcoin es de $2000");
-        let cantidadLibros = prompt("Indica la cantidad de libros que deseas.");
-        while ((parseInt(cantidadLibros) <= 0)) {
-            alert("tienes que elegir al menos 1 Libro para seguir la compra. Gracias");
-            cantidadLibros = prompt("indica la cantidad de Libros que deseas");
-        }
-
-        let suma = parseInt(cantidadLibros) * 2000;
-        alert("El monto a pagar es " + suma);
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-
-
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+    if (opcionLibros == bitcoin ) {
+        alert("El costo del libro Descubriendo el Bitcoin es de $2000");
+        libroOption();
 
     }
-    if (opcionLibros == 4) {
+    if (opcionLibros == diseno) {
         alert("El costo del libro Patrones de Diseño es de $2200");
-        let cantidadLibros = prompt("Indica la cantidad de libros que deseas.");
-        while ((parseInt(cantidadLibros) <= 0)) {
-            alert("tienes que elegir al menos 1 Libro para seguir la compra. Gracias");
-            cantidadLibros = prompt("indica la cantidad de Libros que deseas");
-        }
+        libroOption();
 
-        let suma = parseInt(cantidadLibros) * 2200;
-        alert("El monto a pagar es " + suma);
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-
-
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
     }
-
-
 
 }
-
 
 let montoGorras = 1200;
 if (saludo == 3) {
@@ -349,7 +251,7 @@ if (saludo == 3) {
         opcionGorras = prompt("Elige tu color de gorra favorita.\n " + "\n1-Negra" + "\n2-Roja" + "\n3-Amarilla" + "\n4-Azul" + "\n5-Verde");
     }
 
-    if (opcionGorras == 1) {
+    function gorra(negra) {
         alert("Las gorras tienen un costo de $1200 pesos")
         let cantidadGorras = prompt("Indica la cantidad de Gorras que deseas.")
 
@@ -370,116 +272,47 @@ if (saludo == 3) {
 
 
         }
+
+
         if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n\n Producto: Gorra Negra. \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)));
+            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)) + "$");
         }
 
+
     }
+
+
+    if (opcionGorras == 1) {
+        alert("Producto: Gorra Negra.");
+        gorra();
+
+
+    }
+
 
     if (opcionGorras == 2) {
-        alert("Las gorras tienen un costo de $1200 pesos")
-        let cantidadGorras = prompt("Indica la cantidad de Gorras que deseas.")
-        while ((parseInt(cantidadGorras) <= 0)) {
-            alert("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
-            cantidadGorras = prompt("indica la cantidad de Gorras que deseas");
-        }
-
-        let suma = parseInt(cantidadGorras) * 1200;
-
-        alert("El monto a pagar es " + suma)
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-
-
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n\n Producto: Gorra Roja. \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
-
+        alert("Producto: Gorra Roja.");
+        gorra();
     }
+
+
     if (opcionGorras == 3) {
-        alert("Las gorras tienen un costo de $1200 pesos")
-        let cantidadGorras = prompt("Indica la cantidad de Gorras que deseas.")
-        while ((parseInt(cantidadGorras) <= 0)) {
-            alert("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
-            cantidadGorras = prompt("indica la cantidad de Gorras que deseas");
-        }
-
-        let suma = parseInt(cantidadGorras) * 1200;
-
-        alert("El monto a pagar es " + suma)
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-
-
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n\n Producto: Gorra Amarilla. \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+        alert("Producto: Gorra Amarilla.");
+        gorra();
 
     }
 
     if (opcionGorras == 4) {
-        alert("Las gorras tienen un costo de $1200 pesos")
-
-        let cantidadGorras = prompt("Indica la cantidad de Gorras que deseas.")
-        while ((parseInt(cantidadGorras) <= 0)) {
-            alert("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
-            cantidadGorras = prompt("indica la cantidad de Gorras que deseas");
-        }
-
-        let suma = parseInt(cantidadGorras) * 1200;
-
-        alert("El monto a pagar es " + suma)
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-
-
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n\n Producto: Gorra Azul. \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
-
+        alert("Producto: Gorra Azul.");
+        gorra();
     }
     if (opcionGorras == 5) {
-        alert("Las gorras tienen un costo de $1200 pesos")
-        let cantidadGorras = prompt("Indica la cantidad de Gorras que deseas.")
-        while ((parseInt(cantidadGorras) <= 0)) {
-            alert("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
-            cantidadGorras = prompt("indica la cantidad de Gorras que deseas");
-        }
+        alert("Producto: Gorra Verde.");
 
-        let suma = parseInt(cantidadGorras) * 1200;
+        gorra();
 
-        alert("El monto a pagar es " + suma)
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-
-
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n\n Producto: Gorra Verde. \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
 
     }
-
-
 }
 
 let montoTazas = 1000;
@@ -496,7 +329,7 @@ if (saludo == 4) {
         opcionTazas = prompt("Elige tu taza favorita.\n " + "\n1-Logo Ciencia" + "\n2-Logo Tecnologia" + "\n3-Logo Nuestro Univero" + "\n4-Logo Business");
     }
 
-    if (opcionTazas == 1) {
+    function taza() {
         alert("Las Tazas tienen un valor de 1000 pesos")
         let cantidadTazas = prompt("Indica la cantidad de Tazas que deseas.")
         while ((parseInt(cantidadTazas) <= 0)) {
@@ -515,71 +348,25 @@ if (saludo == 4) {
             alert("Tu Saldo es insuficiente para la compra")
         }
         if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n\n Producto: Taza 'Logo Ciencia'. \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)));
+            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)));
         }
+    }
+
+    if (opcionTazas == 1) {
+        alert("Producto: Taza 'Logo Ciencia'.");
+        taza();
     }
     if (opcionTazas == 2) {
-        alert("Las Tazas tienen un valor de 1000 pesos")
-        let cantidadTazas = prompt("Indica la cantidad de Tazas que deseas.")
-        while ((parseInt(cantidadTazas) <= 0)) {
-            alert("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
-            cantidadTazas = prompt("indica la cantidad de Tazas que deseas");
-        }
-        let suma = parseInt(cantidadTazas) * 1000;
-
-        alert("El monto a pagar es " + suma)
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n\n Producto: Taza 'Logo Tecnologia'. \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+        alert("Producto: Taza 'Logo Tecnologia'.");
+        taza();
     }
     if (opcionTazas == 3) {
-        alert("Las Tazas tienen un valor de 1000 pesos")
-        let cantidadTazas = prompt("Indica la cantidad de Tazas que deseas.")
-        while ((parseInt(cantidadTazas) <= 0)) {
-            alert("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
-            cantidadTazas = prompt("indica la cantidad de Tazas que deseas");
-        }
-        let suma = parseInt(cantidadTazas) * 1000;
-
-        alert("El monto a pagar es " + suma)
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n\n Producto: Taza 'Logo Nuestro Universo'. \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+        alert("Producto: Taza 'Logo Universo'.");
+        taza();
     }
     if (opcionTazas == 4) {
-        alert("Las Tazas tienen un valor de 1000 pesos")
-        let cantidadTazas = prompt("Indica la cantidad de Tazas que deseas.")
-        while ((parseInt(cantidadTazas) <= 0)) {
-            alert("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
-            cantidadTazas = prompt("indica la cantidad de Tazas que deseas");
-        }
-        let suma = parseInt(cantidadTazas) * 1000;
-
-        alert("El monto a pagar es " + suma)
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-
-        if (pago < suma) {
-
-            alert("Tu Saldo es insuficiente para la compra")
-        }
-        if (pago >= suma) {
-            alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito.\n\n Producto: Taza 'Logo Business'. \n\nTu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+        alert("Producto: Taza 'Logo Business'.");
+        taza();
     }
 }
 
@@ -617,94 +404,3 @@ if (saludo == 4) {
 
 
 
-
-/*
-let montoPlaneta = 1600;
-let montoUnivero = 1800;
-let montoBitcoin = 2000;
-let montoDiseno = 2200;
-
-if (saludo == 2) {
-    let nuestroPlaneta = 1;
-    let universo = 2;
-    let bitcoin = 3;
-    let diseno = 4;
-
-    let opcionLibros = prompt("Elige el libro de tu preferencia.\n " + "\n1-Nuestro Planeta" + "\n2-Explorndo el universo" + "\n3-Descubriendo el bitcoin" + "\n4-Patrones de diseño")
-    if (opcionLibros == 1) {
-        alert("El costo del libro Nuestro Planeta es de $1600")
-    }
-
-    if (opcionLibros == 2) {
-        alert("El costo del libro Explorando el Universo es de $1800")
-    }
-
-    if (opcionLibros == 3) {
-        alert("El costo del libro Descubreindo el Bitcoin es de $2000")
-    }
-    if (opcionLibros == 4) {
-        alert("El costo del libro Patrones de Diseño es de $2200")
-    }
-
-    let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-  
-    if (pago < montoPlaneta) {
-  
-        alert("Tu Saldo es insuficiente para la compra")
-    
-        
-    }
-    if (pago >= montoPlaneta) {
-        alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(montoPlaneta)));
-    }
-    
-}
-
-
-
-if (pago < montoUnivero) {
-    alert("Tu Saldo es insuficiente para la compra")
-}
-
-if (pago >= montoUnivero) {
-    alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(montoUnivero)));
-}
-if (pago < montoBitcoin) {
-    alert("Tu Saldo es insuficiente para la compra")
-}
-
-if (pago >= montoBitcoin) {
-    alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(montoBitcoin)));
-}
-if (pago < montoDiseno) {
-    alert("Tu Saldo es insuficiente para la compra")
-}
-
-if (pago >= montoDiseno) {
-    alert("Muchas gracias " + " " + nombre + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(montoDiseno)));
-}
-
-
-
-
-/*
-if (saludo == 3) {
-    prompt("Elige tu color de gorra favorito.\n " + "\n1-Negra" + "\n2-Roja" + "\n3-Amarilla" + "\n4-Azul" + "\n4-Verde")
-    alert("El costo del libro Nuestro Planeta es de $1600")
-}
-/*
-prompt("Elige el libro de tu preferencia.\n " + "\n1-Nuestro Planeta" + "\n2-Explora el universo" + "\n3-Descubriendo el bitcoin" + "\n4-Patrones de diseño")
-alert("El costo del libro Nuestro Planeta es de $1600")
-
-
-if (enero == "1") {
-let montoRevista = 800 ;
-alert("el costo de la Revistas tiene un valor de $800")
-prompt("Serias tan amable de indicar con cuanto vas a abonar?")
-prompt("Muchas gracias " + " " + nombre + "Tu compra se finalizo con exito. Tu vuelto es " - parseInt(montoRevista)  )
-} else{}
- 
- 
-}
-
-*/
