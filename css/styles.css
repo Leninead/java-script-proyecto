@@ -1,22 +1,160 @@
-h1{
+/* Comienzo del Header y Nav */
+.contenedor-grid{
+    width: 100%;
+}
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/index/universo-gif.gif);
+    color: rgb(207, 185, 185);
+    padding: 15px;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+}
+/* Comienzo del Main */
+h1 {
+    text-align: center;
+}
+
+.container__carousel{
+    margin: 30px auto;
+    
+    width: 400px; 
+    height: 300px;
+}
+
+.img-carousel {
+  
+   
+    width: 400px ;
+    height: 300px;
+}
+
+.container_video{
+    margin: 30px auto;
+    
+    width: 400px; 
+    height: 300px;
+}
+
+/* Comiendo del Footer */
+.footer-contenedor{
+    height: 100px;
+}
+footer{
+    height: 100%;
+    background-image: url(../img/index/universo-gif.gif);
+}
+.footer__h2 {
+    color: white;
     text-align: center;
     font-size: 50px;
-    color: blue;
+    font-weight: bold;
+    margin: 30px;
 }
 
-h2{
-    text-align: center;
-    font-size: 40px;
-    color: blue;
-}
+/* Seccion Revista */
 
-h3{
-    text-align: center;
+
+.card { margin: 30px auto; }
+/*  
+.container-2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
+    gap: 1em;
+
+   
+   } 
+
+
+.ciencia__h3 {
+    color: white;
+    font-family: 'Michroma', sans-serif;
     font-size: 30px;
-    color: blue;
 }
-h4{
-    text-align: center;
-    font-size: 20px;
-    color: blue;
+
+
+.container-nav__ul li a {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    font-size: 1.2rem;
+    padding: 5px;
+
+ 
+
+
 }
+
+
+.newsletter {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: baseline;
+    color: white;
+    font-size: 1.3em;
+
+   
+    }
+
+
+
+form {
+  
+        display: flex;
+        flex-direction: column;
+        font-size: .9em;
+        align-items: flex-start baseline;
+        gap: 5px
+    }
+
+
+
+
+
+.newsletter__h4 {
+  
+        justify-content: flex-end;
+
+}
+
+.fname {
+    border: none;
+    transition: all 400ms ease;
+    border-radius: 5px;
+
+  
+}
+
+.lname {
+    border: none;
+    transition: all 400ms ease;
+    border-radius: 5px;
+
+   
+}
+
+.email {
+    border: none;
+    transition: all 400ms ease;
+    border-radius: 5px;
+
+   
+}
+
+.bottom {
+    border: none;
+
+    transition: all 400ms ease;
+    border-radius: 5px;
+
+}
+*/
