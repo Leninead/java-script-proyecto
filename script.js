@@ -1,6 +1,18 @@
 
-alert("Somos Ciencia Magazine")
 
+//Saludo MARCA
+
+const MARCA = "Somos Ciencia Magazine"
+const BIENVENIDA = ("¡Bienvenido a " + MARCA + ".");
+
+//variables
+let volver = "a";
+let salir = "b";
+
+
+
+console.log(MARCA);
+alert(MARCA);
 
 
 class Cliente {
@@ -28,314 +40,422 @@ while ((clienteUno.nombre == "") || (clienteUno.apellido == "") || (clienteUno.c
     clienteUno = new Cliente(prompt("Ingrese Su Nombre").toLocaleUpperCase(), prompt("Ingrese Su Apellido").toLocaleUpperCase(), prompt("Ingrese Su Correo Electrónico").toLocaleUpperCase());
 }
 
+console.log(BIENVENIDA + " " + clienteUno.toString() + " " + ", tu portal de ciencia favorito");
+alert(BIENVENIDA + " " + clienteUno.toString() + " " + ", tu portal de ciencia favorito")
 
-alert("Te damos la bienvenida " + " " + clienteUno.toString() + " " + "a tu portal de ciencia favorito")
+//ARRAY para seleccion de las operaciones
 
-console.log("Te damos la bienvenida " + " " + clienteUno.toString() + " " + "a tu portal de ciencia favorito");
+let listaDeOperaciones = ["1.- Revistas", "2.- Libros", "3.- Gorras", "4.- Tazas"];
 
-let saludo = prompt("Selecciona el producto de tu preferencia.\n " + "\nPor Ejemplo '1' para Revista " + "\n\n1-Revista" + "\n2-Libros" + "\n3-Gorras" + "\n4-Tazas")
-let revista = 1;
-let libros = 2;
-let gorras = 3;
-let tazas = 4;
 
-while ((parseInt(saludo) !== revista) && (parseInt(saludo) !== libros) && (parseInt(saludo) !== gorras) && (parseInt(saludo) !== tazas)) {
-    saludo = prompt("Selecciona el producto de tu preferencia.\n " + "\nPor Ejemplo '1' para Revista " + "\n\n1-Revista" + "\n2-Libros" + "\n3-Gorras" + "\n4-Tazas")
+
+
+
+//--> Objetos y arrays <--//   
+
+//Revistas
+class Revista {
+    constructor(mes, nombre, precio) {
+        this.mes = mes;
+        this.nombre = nombre;
+        this.precio = parseFloat(precio);
+    }
+    toString() {
+        return this.mes + " (" + this.precio.toFixed(2) + ")";
+    }
 }
 
+let edicionRevista = [];
 
+edicionRevista.push(new Revista("Enero", "Es nuestra primera edicion", 800));
+edicionRevista.push(new Revista("Marzo", "Aprende a Progrmar", 800));
+edicionRevista.push(new Revista("Mayo", "Planeta verde", 800));
+edicionRevista.push(new Revista("Julio", "James Webb", 800));
+edicionRevista.push(new Revista("Septiembre", " Criptomonedas en Argentina", 800));
+edicionRevista.push(new Revista("Noviembre", "Inteligencia Artificial", 800));
 
-let volver = "a";
-let salir = "b";
+//Libros
 
-function cierreVenta() {
-    let salida = prompt("Elige la opcion de tu preferencia: " + "\n" + "\na-Volver al menu" + "\nb-Salir");
-    console.log("Elige la opcion de tu preferencia: " + "\n" + "\na-Volver al menu" + "\nb-Salir");
+class Libro {
+    constructor(nombre, precio) {
+        this.nombre = nombre;
+        this.precio = parseFloat(precio);
+    }
+    toString() {
+        return this.nombre + + " (" + this.precio.toFixed(2) + ")";
+    }
+}
 
-    if (salida == volver) {
-        saludo = prompt("Selecciona el producto de tu preferencia.\n " + "\nPor Ejemplo '1' para Revista " + "\n\n1-Revista" +
-            "\n2-Libros" + "\n3-Gorras" + "\n4-Tazas")
-            console.log("Selecciona el producto de tu preferencia.\n " + "\nPor Ejemplo '1' para Revista " + "\n\n1-Revista" +
-            "\n2-Libros" + "\n3-Gorras" + "\n4-Tazas");
-        operacionEleccion();
+let edicionLibro = [];
 
+edicionLibro.push(new Libro("Nuestro Planeta", 1600));
+edicionLibro.push(new Libro("Explorando el Universo", 1800));
+edicionLibro.push(new Libro("Descubriendo el bitcoin", 2000));
+edicionLibro.push(new Libro("Patrones de diseño", 2200));
+
+//Gorras
+class Gorra {
+    constructor(color, precio) {
+        this.color = color;
+        this.precio = parseFloat(precio);
+    }
+    toString() {
+        return this.color + + " (" + this.precio.toFixed(2) + ")";
+    }
+}
+
+let edicionGorra = [];
+
+edicionGorra.push(new Gorra("Negra", 1200));
+edicionGorra.push(new Gorra("Roja", 1200));
+edicionGorra.push(new Gorra("Amarilla", 1200));
+edicionGorra.push(new Gorra("Azul", 1200));
+edicionGorra.push(new Gorra("Verde", 1200));
+
+//Tazas
+class Taza {
+    constructor(logo, precio) {
+        this.logo = logo;
+        this.precio = parseFloat(precio);
+    }
+    toString() {
+        return this.logo + + " (" + this.precio.toFixed(2) + ")";
+    }
+}
+
+let edicionTaza = [];
+
+edicionTaza.push(new Taza("Logo Ciencia", 1000));
+edicionTaza.push(new Taza("Logo Tecnología", 1000));
+edicionTaza.push(new Taza("Logo Universo", 1000));
+edicionTaza.push(new Taza("Logo Business", 1000));
+
+//Funciones
+
+function elegirOperacion() {
+    let operacion = parseInt(prompt("Selecciona el producto de tu preferencia.\n " + "\nPor Ejemplo '1' para Revista " + "\n\n" + (listaDeOperaciones[0]) + "\n" + (listaDeOperaciones[1]) + "\n" + (listaDeOperaciones[2]) + "\n" + (listaDeOperaciones[3]) + "\n"));
+
+    switch (operacion) {
+        case 1:
+            alert("Las revistas tiene un costo de 800$");
+            console.log("Las revistas tiene un costo de 800$");
+            compraRevista();
+            cierreVenta();
+            break;
+        case 2:
+
+            compraLibro();
+            cierreVenta();
+            break;
+        case 3:
+            alert("Las gorras tienen un costo de 1200$")
+            compraGorra();
+            cierreVenta();
+            break;
+        case 4:
+           alert("Las tazas tienen un costo de 1000$")
+           compraTaza();
+           cierreVenta();
+            break;
+
+        default:
+            console.log("Debes seleccionar una opción entre 1 y 4");
+            alert("Debes seleccionar una opción entre 1 y 4");
+            elegirOperacion();
+
+            break;
     }
 
-    if (salida == salir) {
-        alert("Gracias por preferirnos sera hasta una proxima vez")
-        console.log("Gracias por preferirnos sera hasta una proxima vez");
-    }
+
 
 }
 
+//Function para opcion Revista
+function compraRevista() {
+    let seleccionRevista = parseInt(prompt("Elije la edicion mensual de tu preferencia:" + "\n\n" + "1.- " + (edicionRevista[0].mes) + "\n" + "2.- " + (edicionRevista[1].mes) + "\n" + "3.- " + (edicionRevista[2].mes) + "\n" + "4.- " + (edicionRevista[3].mes) + "\n" + "5.- " + (edicionRevista[4].mes) + "\n" + "6.- " + (edicionRevista[5].mes)));
 
-function operacionEleccion() {
+    switch (seleccionRevista) {
+        case 1:
 
-    //--> Seccion Revistas <--//   
-    let montoRevista = 800;
-
-    if (saludo == 1) {
-
-        let enero = 1;
-        let Marzo = 2;
-        let mayo = 3;
-        let julio = 4;
-        let septiembre = 5;
-        let Noviembre = 6;
-
-
-
-        let opcionRevista = prompt("Elige la edicion mensual de tu preferencia.\n " + "\n1-Enero" + "\n2-Marzo" + "\n3-Mayo" + "\n4-Julio" + "\n5-Septiembre" + "\n6-Noviembre");
-        console.log("Elige la edicion mensual de tu preferencia.\n " + "\n1-Enero" + "\n2-Marzo" + "\n3-Mayo" + "\n4-Julio" + "\n5-Septiembre" + "\n6-Noviembre");
-
-        while ((parseInt(opcionRevista) !== enero) && (parseInt(opcionRevista) !== Marzo) && (parseInt(opcionRevista) !== mayo) && (parseInt(opcionRevista) !== julio) && (parseInt(opcionRevista) !== septiembre) && (parseInt(opcionRevista) !== Noviembre)) {
-            opcionRevista = prompt("Elige la edicion mensual de tu preferencia.\n " + "\n1-Enero" + "\n2-Marzo" + "\n3-Mayo" + "\n4-Julio" + "\n5-Septiembre" + "\n6-Noviembre");
-        }
-
-
-
-        let precio = 800;
-
-
-        function meses(enero) {
-            alert("Las revistas tiene un costo de $800 pesos");
+            alert("Enero es nuestra Primera Edicion");
             console.log("Las revistas tiene un costo de $800 pesos");
 
+            calcularCompraRevista();
+           
+            break;
 
-            let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+        case 2:
+            alert("Marzo es nuestra edicion Aprende a Progrmar")
+            calcularCompraRevista();
+            break;
+        case 3:
+            alert("Mayo es nuestra edicion Planeta verde")
+            calcularCompraRevista();
+            break;
+        case 4:
+            alert("Julio es nuestra edicion James Webb")
+            calcularCompraRevista();
+            break;
+        case 5:
+            alert("Septiembre es nuestra edicion Criptomonedas en Argentina")
+            calcularCompraRevista();
+            break;
+        case 6:
+            alert("Noviembre es nuestra edicion Inteligencia Artificial")
+            calcularCompraRevista();
+            break;
+
+        default:
+            console.log("Debes seleccionar una opción entre 1 y 6");
+            alert("Debes seleccionar una opción entre 1 y 6");
+            compraRevista();
+            break;
+    }
+
+}
+
+elegirOperacion();
+
+function calcularCompraRevista() {
+    let cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+    console.log("indica la cantidad de Revista que deseas");
+
+    while (isNaN(parseInt(cantidadRevista))) {
+        alert("Necesitas agregar una cantidad numerica");
+        console.log("Necesitas agregar una cantidad numerica");
+        cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+        console.log("indica la cantidad de Revista que deseas");
+    }
+
+    while ((parseInt(cantidadRevista) <= 0)) {
+        alert("tienes que elegir al menos 1 revista para seguir la compra. Gracias");
+        console.log("tienes que elegir al menos 1 revista para seguir la compra. Gracias");
+        cantidadRevista = prompt("indica la cantidad de Revista que deseas");
+        console.log("indica la cantidad de Revista que deseas");
+
+    }
+
+    let suma = parseInt(cantidadRevista) * ((edicionRevista[0].precio));
+
+    alert(" El monto a pagar es " + suma);
+    console.log(" El monto a pagar es " + suma);
+
+    let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+    console.log("Serias tan amable de indicar con cuanto vas a abonar?");
+
+
+
+    if (pago < suma) {
+        alert("Tu Saldo es insuficiente para la compra")
+        console.log("Tu Saldo es insuficiente para la compra");
+    } else if (pago >= suma) { alert("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma))); }
+
+
+}
+// Funcion para Libro
+function compraLibro() {
+    let seleccionLibro = parseInt(prompt("Elije el libro de tu preferencia:" + "\n\n" + "1.- " + (edicionLibro[0].nombre) + "\n" + "2.- " + (edicionLibro[1].nombre) + "\n" + "3.- " + (edicionLibro[2].nombre) + "\n" + "4.- " + (edicionLibro[3].nombre)));
+
+    switch (seleccionLibro) {
+        case 1:
+            alert("El costo del libro 'Nuestro Planeta' es de 1600$ ")
+            console.log("El costo del libro 'Nuestro Planeta' es de 1600$ ");
+            calcularCompraLibro();
+            break;
+        case 2:
+            alert("El costo del libro 'Explorando el Universo' es de 1800$  ")
+            console.log("El costo del libro 'Explorando el Universo' es de 1800$  ");
+            calcularCompraLibro();
+            break;
+        case 3:
+            alert("El costo del libro 'Descubriendo el Bitcoin' es de 2000$ ")
+            console.log("El costo del libro 'Descubriendo el Bitcoin' es de 2000$ ");
+            calcularCompraLibro();
+            break;
+        case 4:
+            alert("El costo del libro 'Descubriendo el Bitcoin' es de 2200$ ")
+            console.log("El costo del libro 'Descubriendo el Bitcoin' es de 2200$ ");
+            calcularCompraLibro();
+            break;
+
+
+
+        default:
+            console.log("Debes seleccionar una opción entre 1 y 4");
+            alert("Debes seleccionar una opción entre 1 y 4");
+            compraLibro();
+            break;
+    }
+}
+
+
+function calcularCompraLibro() {
+
+    let cantidadLibros = prompt("Indica la cantidad de libros que deseas.");
+
+    while (isNaN(parseInt(cantidadLibros))) {
+        alert("Necesitas agregar una cantidad numerica");
+        console.log("Necesitas agregar una cantidad numerica");
+        cantidadLibros = prompt("indica la cantidad de Libros que deseas");
+        console.log("indica la cantidad de Libros que deseas");
+    }
+
+    while ((parseInt(cantidadLibros) <= 0)) {
+        alert("tienes que elegir al menos 1 Libro para seguir la compra. Gracias");
+        console.log("tienes que elegir al menos 1 Libro para seguir la compra. Gracias");
+
+        cantidadLibros = prompt("indica la cantidad de Libros que deseas");
+        console.log("indica la cantidad de Libros que deseas");
+    }
+
+    let suma = parseInt(cantidadLibros) * ((edicionLibro[0].precio));
+
+    alert("El monto a pagar es " + suma);
+    console.log("El monto a pagar es " + suma);
+
+    let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+    console.log("Serias tan amable de indicar con cuanto vas a abonar?");
+
+    if (pago < suma) {
+
+        alert("Tu Saldo es insuficiente para la compra")
+        console.log("Tu Saldo es insuficiente para la compra");
+
+    }
+
+    if (pago < suma) {
+        alert("Tu Saldo es insuficiente para la compra")
+        console.log("Tu Saldo es insuficiente para la compra");
+    } else if (pago >= suma) { alert("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma))); }
+
+}
+//Function para Gorra
+
+function compraGorra() {
+    let seleccionGorra = parseInt(prompt("Elije la gorra de tu preferencia:" + "\n\n" + "1.- " + (edicionGorra[0].color) + "\n" + "2.- " + (edicionGorra[1].color) + "\n" + "3.- " + (edicionGorra[2].color) + "\n" + "4.- " + (edicionGorra[3].color) + "\n" + "5.- " + (edicionGorra[4].color)));
+
+    switch (seleccionGorra) {
+        case 1:
+            alert("Producto seleccinado: Gorra Negra")
+            calcularCompraGorra();
+            break;
+        case 2:
+            alert("Producto seleccinado: Gorra Roja")
+            calcularCompraGorra();
+            break;
+        case 3:
+            alert("Producto seleccinado: Gorra Amarilla")
+            calcularCompraGorra();
+            break;
+        case 4:
+            alert("Producto seleccinado: Gorra Azul")
+            calcularCompraGorra();
+            break;
+        case 5:
+            alert("Producto seleccinado: Gorra Verde")
+            calcularCompraGorra();
+            break;
+
+        default:
+            console.log("Debes seleccionar una opción entre 1 y 5");
+            alert("Debes seleccionar una opción entre 1 y 5");
+            compraGorra();
+            break;
+    }
+}
+
+    function calcularCompraGorra() {
+        let cantidadGorras = prompt("Indica la cantidad de Gorras que deseas.")
+        console.log("Indica la cantidad de Gorras que deseas.");
+
+
+        while (isNaN(parseInt(cantidadGorras))) {
+            alert("Necesitas agregar una cantidad numerica");
+            console.log("Necesitas agregar una cantidad numerica");
+            cantidadGorras = prompt("indica la cantidad de Revista que deseas");
             console.log("indica la cantidad de Revista que deseas");
 
-
-            while (isNaN(parseInt(cantidadRevista))) {
-                alert("Necesitas agregar una cantidad numerica");
-                console.log("Necesitas agregar una cantidad numerica");
-                cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-                console.log("indica la cantidad de Revista que deseas");
-
-            }
-
-            while ((parseInt(cantidadRevista) <= 0)) {
-                alert("tienes que elegir al menos 1 revista para seguir la compra. Gracias");
-                console.log("tienes que elegir al menos 1 revista para seguir la compra. Gracias");
-                cantidadRevista = prompt("indica la cantidad de Revista que deseas");
-                console.log("indica la cantidad de Revista que deseas");
-
-            }
-
-            let suma = parseInt(cantidadRevista) * precio;
-
-            alert(" El monto a pagar es " + suma);
-            console.log(" El monto a pagar es " + suma);
-
-            let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-            console.log("Serias tan amable de indicar con cuanto vas a abonar?");
-
-
-
-            if (pago < suma) {
-                alert("Tu Saldo es insuficiente para la compra")
-                console.log("Tu Saldo es insuficiente para la compra");
-            } else if (pago >= suma) { alert("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma))); }
-
-
-
-
+        }
+        while ((parseInt(cantidadGorras) <= 0)) {
+            alert("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
+            console.log("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
+            cantidadGorras = prompt("indica la cantidad de Gorras que deseas");
+            console.log("indica la cantidad de Gorras que deseas");
         }
 
+        let suma = parseInt(cantidadGorras) * ((edicionGorra[0].precio));
 
-        if (opcionRevista == 1) {
-            alert("Enero es nuestra 'Primera Edicion'");
-            console.log("Enero es nuestra 'Primera Edicion'");
-            meses();
-        } else if (opcionRevista == 2) {
-            alert("Marzo es nuestra edicion de 'Aprende a Progrmar'");
-            console.log("Marzo es nuestra edicion de 'Aprende a Progrmar'");
-            meses();
-        } else if (opcionRevista == 3) {
-            alert("Mayo es nuestra edicion  de 'Planeta verde'");
-            console.log("Mayo es nuestra edicion  de 'Planeta verde'");
-            meses();
-        } else if (opcionRevista == 4) {
-            alert("Julio es nuestra edicion  de 'James Webb'")
-            console.log("Julio es nuestra edicion  de 'James Webb'");
-            meses();
-        } else if (opcionRevista == 5) {
-            alert("Septiembre es nuestra edicion  de 'Criptomonedas en Argentina'");
-            console.log("Septiembre es nuestra edicion  de 'Criptomonedas en Argentina'");
-            meses();
-        } else if (opcionRevista == 6) {
-            alert("Noviembre es nuestra edicion  de 'Inteligencia Artificial'");
-            console.log("Noviembre es nuestra edicion  de 'Inteligencia Artificial'");
-            meses();
+        alert("El monto a pagar es " + suma);
+        console.log("El monto a pagar es " + suma);
+
+        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+        console.log("Serias tan amable de indicar con cuanto vas a abonar?");
+
+
+        if (pago < suma) {
+            alert("Tu Saldo es insuficiente para la compra");
+            console.log("Tu Saldo es insuficiente para la compra");
+        } else if (pago >= suma) {
+            alert("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+            console.log("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
         }
-
-        cierreVenta();
-
     }
 
-    //--> Seccion Libros <--//
-    class libro {
-        constructor(edicion, precio) {
-            this.edicion = edicion.toLowerCase();
-            this.precio = parseFloat(precio);
-
-
+        function compraTaza() {
+            let seleccionTaza = parseInt(prompt("Elije la taza de tu preferencia" + "\n\n" + "1.- " + (edicionTaza[0].logo) + "\n" + "2.- " + (edicionTaza[1].logo) + "\n" + "3.- " + (edicionTaza[2].logo) + "\n" + "4.- " + (edicionTaza[3].logo)));
+            switch (seleccionTaza) {
+                case 1:
+                    alert("Taza seleccionada: 'Logo Ciencia' ")
+                    calcularTaza();
+                    break;
+                    case 2:
+                        alert("Taza seleccionada: 'Logo Tecnología' ")
+                        calcularTaza();
+                    break;
+                    case 3 :
+                        alert("Taza seleccionada: 'Logo Universo' ")
+                        calcularTaza();
+                    break;
+                    case 4:
+                        alert("Taza seleccionada: 'Logo Business' ")
+                        calcularTaza();
+                    break;
+            
+            
+                default:
+                    console.log("Debes seleccionar una opción entre 1 y 4");
+                    alert("Debes seleccionar una opción entre 1 y 4");
+                    compraTaza();
+                    break;
+            }
         }
-        toString() {
-            return this.edicion + " (" + this.precio.toFixed(2) + ")";
-        }
-
-
-    }
-
-    let montoPlaneta = 1600;
-    let montoUnivero = 1800;
-    let montoBitcoin = 2000;
-    let montoDiseno = 2200;
-
-
-    let libro1 = new libro("Nuestro Planeta", montoPlaneta);
-    console.log("este es el precio de la edicion " + libro1);
-
-
-    let libro2 = new libro("Explorando el universo", montoUnivero)
-
-    console.log("este es el precio de la edicion " + libro2);
-
-    let libro3 = new libro("Descubriendo el bitcoin", montoBitcoin)
-
-    console.log("este es el precio de la edicion " + libro3)
-
-    let libro4 = new libro("Patrones de diseño", montoDiseno)
-
-    console.log("este es el precio de la edicion " + libro4)
-
-
-
-
-    if (saludo == 2) {
-        let nuestroPlaneta = 1;
-        let universo = 2;
-        let bitcoin = 3;
-        let diseno = 4;
-
-        let opcionLibros = prompt("Elige el libro de tu preferencia.\n " + "\n" + nuestroPlaneta + "-" + libro1 + "\n" + universo + "-" + libro2 + "\n" + bitcoin + "-" + libro3 + "\n" + diseno + "-" + libro4);
-        console.log("Elige el libro de tu preferencia.\n " + "\n" + nuestroPlaneta + "-" + libro1 + "\n" + universo + "-" + libro2 + "\n" + bitcoin + "-" + libro3 + "\n" + diseno + "-" + libro4);
-
-        while ((parseInt(opcionLibros) !== nuestroPlaneta) && (parseInt(opcionLibros) !== universo) && (parseInt(opcionLibros) !== bitcoin) && (parseInt(opcionLibros) !== diseno)) {
-            opcionLibros = prompt("Elige el libro de tu preferencia.\n " + "\n" + nuestroPlaneta + "-" + libro1 + "\n" + universo + "-" + libro2 + "\n" + bitcoin + "-" + libro3 + "\n" + diseno + "-" + libro4);
-            console.log("Elige el libro de tu preferencia.\n " + "\n" + nuestroPlaneta + "-" + libro1 + "\n" + universo + "-" + libro2 + "\n" + bitcoin + "-" + libro3 + "\n" + diseno + "-" + libro4);
-        }
-        function libroOption() {
-            let cantidadLibros = prompt("Indica la cantidad de libros que deseas.");
-
-            while (isNaN(parseInt(cantidadLibros))) {
+        function calcularTaza() {
+            let cantidadTazas = prompt("Indica la cantidad de Tazas que deseas.")
+            console.log("Indica la cantidad de Tazas que deseas.");
+    
+            while (isNaN(parseInt(cantidadTazas))) {
                 alert("Necesitas agregar una cantidad numerica");
                 console.log("Necesitas agregar una cantidad numerica");
-                cantidadLibros = prompt("indica la cantidad de Libros que deseas");
-                console.log("indica la cantidad de Libros que deseas");
-
+                cantidadTazas = prompt("indica la cantidad de Revista que deseas");
+                console.log("indica la cantidad de Revista que deseas");
+    
             }
-
-            while ((parseInt(cantidadLibros) <= 0)) {
-                alert("tienes que elegir al menos 1 Libro para seguir la compra. Gracias");
-                console.log("tienes que elegir al menos 1 Libro para seguir la compra. Gracias");
-
-                cantidadLibros = prompt("indica la cantidad de Libros que deseas");
-                console.log("indica la cantidad de Libros que deseas");
+            while ((parseInt(cantidadTazas) <= 0)) {
+                alert("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
+                console.log("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
+                cantidadTazas = prompt("indica la cantidad de Tazas que deseas");
+                console.log("indica la cantidad de Tazas que deseas");
             }
-
-            let suma = parseInt(cantidadLibros) * montoPlaneta;
+    
+            let suma = parseInt(cantidadTazas) * ((edicionTaza[0].precio));
+    
             alert("El monto a pagar es " + suma);
             console.log("El monto a pagar es " + suma);
-
+    
             let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
             console.log("Serias tan amable de indicar con cuanto vas a abonar?");
-
-            if (pago < suma) {
-
-                alert("Tu Saldo es insuficiente para la compra")
-                console.log("Tu Saldo es insuficiente para la compra");
-
-            }
-
-            if (pago < suma) {
-                alert("Tu Saldo es insuficiente para la compra")
-                console.log("Tu Saldo es insuficiente para la compra");
-            } else if (pago >= suma) { alert("Muchas gracias " + " " + clienteUno.toString()+ " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma))); }
-
-
-        }
-
-        if (opcionLibros == nuestroPlaneta) {
-            alert("El costo del libro Nuestro Planeta es de $1600");
-            console.log("El costo del libro Nuestro Planeta es de $1600");
-            libroOption();
-        } else if (opcionLibros == universo) {
-            alert("El costo del libro Explorando el Universo es de $1800");
-            console.log("El costo del libro Explorando el Universo es de $1800");
-            libroOption();
-        } else if (opcionLibros == bitcoin) {
-            alert("El costo del libro Descubriendo el Bitcoin es de $2000");
-            console.log("El costo del libro Descubriendo el Bitcoin es de $2000");
-            libroOption();
-        } else if (opcionLibros == diseno) {
-            alert("El costo del libro Patrones de Diseño es de $2200");
-            console.log("El costo del libro Patrones de Diseño es de $2200");
-            libroOption();
-
-        }
-        cierreVenta();
-    }
-
-    //--> Seccion Gorras <--//
-
-    let montoGorras = 1200;
-    if (saludo == 3) {
-        let Negra = 1;
-        let Roja = 2;
-        let amarilla = 3;
-        let azul = 4;
-        let verde = 5;
-
-        let opcionGorras = prompt("Elige tu color de gorra favorita.\n " + "\n1-Negra" + "\n2-Roja" + "\n3-Amarilla" + "\n4-Azul" + "\n5-Verde");
-        console.log("Elige tu color de gorra favorita.\n " + "\n1-Negra" + "\n2-Roja" + "\n3-Amarilla" + "\n4-Azul" + "\n5-Verde");
-
-        while ((parseInt(opcionGorras) !== Negra) && (parseInt(opcionGorras) !== Roja) && (parseInt(opcionGorras) !== amarilla) && (parseInt(opcionGorras) !== azul) && (parseInt(opcionGorras) !== verde)) {
-            opcionGorras = prompt("Elige tu color de gorra favorita.\n " + "\n1-Negra" + "\n2-Roja" + "\n3-Amarilla" + "\n4-Azul" + "\n5-Verde");
-            console.log("Elige tu color de gorra favorita.\n " + "\n1-Negra" + "\n2-Roja" + "\n3-Amarilla" + "\n4-Azul" + "\n5-Verde");
-        }
-
-        function gorra(negra) {
-            alert("Las gorras tienen un costo de $1200 pesos")
-            console.log("Las gorras tienen un costo de $1200 pesos");
-            let cantidadGorras = prompt("Indica la cantidad de Gorras que deseas.")
-            console.log("Indica la cantidad de Gorras que deseas.");
-
-
-            while (isNaN(parseInt(cantidadGorras))) {
-                alert("Necesitas agregar una cantidad numerica");
-                console.log("Necesitas agregar una cantidad numerica");
-                cantidadGorras = prompt("indica la cantidad de Revista que deseas");
-                console.log("indica la cantidad de Revista que deseas");
-
-            }
-            while ((parseInt(cantidadGorras) <= 0)) {
-                alert("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
-                console.log("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
-                cantidadGorras = prompt("indica la cantidad de Gorras que deseas");
-                console.log("indica la cantidad de Gorras que deseas");
-            }
-
-            let suma = parseInt(cantidadGorras) * montoGorras;
-
-            alert("El monto a pagar es " + suma);
-            console.log("El monto a pagar es " + suma);
-
-            let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-            console.log("Serias tan amable de indicar con cuanto vas a abonar?");
-
-
+    
+    
             if (pago < suma) {
                 alert("Tu Saldo es insuficiente para la compra");
                 console.log("Tu Saldo es insuficiente para la compra");
@@ -346,141 +466,20 @@ function operacionEleccion() {
         }
 
 
-        if (opcionGorras == 1) {
-            alert("Producto: Gorra Negra.");
-            console.log("Producto: Gorra Negra.");
-            gorra();
-        } else if (opcionGorras == 2) {
-            alert("Producto: Gorra Roja.");
-            console.log("Producto: Gorra Roja.");
-            gorra();
-        } else if (opcionGorras == 3) {
-            alert("Producto: Gorra Amarilla.");
-            console.log("Producto: Gorra Amarilla.");
-            gorra();
-
-        } else if (opcionGorras == 4) {
-            alert("Producto: Gorra Azul.");
-            console.log("Producto: Gorra Azul.");
-            gorra();
-        } else if (opcionGorras == 5) {
-            alert("Producto: Gorra Verde.");
-            console.log("Producto: Gorra Verde.");
-
-            gorra();
-
-
-        }
-        cierreVenta();
-    }
-
-    //--> Seccion tazas <--//
-
-    let montoTazas = 1000;
-
-    if (saludo == 4) {
-        let logoCiencia = 1;
-        let logoTecnologia = 2;
-        let logoUniverso = 3;
-        let logoBusiness = 4;
-
-        let opcionTazas = prompt("Elige tu taza favorita.\n " + "\n1-Logo Ciencia" + "\n2-Logo Tecnologia" + "\n3-Logo Nuestro Univero" + "\n4-Logo Business");
-        console.log("Elige tu taza favorita.\n " + "\n1-Logo Ciencia" + "\n2-Logo Tecnologia" + "\n3-Logo Nuestro Univero" + "\n4-Logo Business");
-
-        while ((parseInt(opcionTazas) !== logoCiencia) && (parseInt(opcionTazas) !== logoTecnologia) && (parseInt(opcionTazas) !== logoUniverso) && (parseInt(opcionTazas) !== logoBusiness)) {
-            opcionTazas = prompt("Elige tu taza favorita.\n " + "\n1-Logo Ciencia" + "\n2-Logo Tecnologia" + "\n3-Logo Nuestro Univero" + "\n4-Logo Business");
-            console.log("Elige tu taza favorita.\n " + "\n1-Logo Ciencia" + "\n2-Logo Tecnologia" + "\n3-Logo Nuestro Univero" + "\n4-Logo Business");
-        }
-
-        function taza() {
-            alert("Las Tazas tienen un valor de 1000 pesos");
-            console.log("Las Tazas tienen un valor de 1000 pesos");
-            let cantidadTazas = prompt("Indica la cantidad de Tazas que deseas.")
-            console.log("Indica la cantidad de Tazas que deseas.");
-
-            while (isNaN(parseInt(cantidadTazas))) {
-                alert("Necesitas agregar una cantidad numerica");
-                console.log("Necesitas agregar una cantidad numerica");
-                cantidadTazas = prompt("indica la cantidad de Revista que deseas");
-                console.log("indica la cantidad de Revista que deseas");
-
+    
+        
+        function cierreVenta() {
+            let salida = prompt("Elige la opcion de tu preferencia: " + "\n" + "\na-Volver al menu" + "\nb-Salir");
+            console.log("Elige la opcion de tu preferencia: " + "\n" + "\na-Volver al menu" + "\nb-Salir");
+        
+            if (salida == volver) {
+                elegirOperacion();
+        
+            }else if (salida == salir) {
+                alert("Gracias por preferirnos sera hasta una proxima vez")
+                console.log("Gracias por preferirnos sera hasta una proxima vez");
             }
-            while ((parseInt(cantidadTazas) <= 0)) {
-                alert("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
-                console.log("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
-                cantidadTazas = prompt("indica la cantidad de Tazas que deseas");
-                console.log("indica la cantidad de Tazas que deseas");
-            }
-
-            let suma = parseInt(cantidadTazas) * montoTazas;
-
-            alert("El monto a pagar es " + suma);
-            console.log("El monto a pagar es " + suma);
-
-            let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-            console.log("Serias tan amable de indicar con cuanto vas a abonar?");
-
-
-            if (pago < suma) {
-                alert("Tu Saldo es insuficiente para la compra");
-                console.log("Tu Saldo es insuficiente para la compra");
-            } else if (pago >= suma) { 
-                alert("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma))); 
-                console.log("Muchas gracias " + " " + clienteUno.toString()+ " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-            }
+        
         }
-
-        if (opcionTazas == 1) {
-            alert("Producto: Taza 'Logo Ciencia'.");
-            console.log("Producto: Taza 'Logo Ciencia'.");
-            taza();
-        } else if (opcionTazas == 2) {
-            alert("Producto: Taza 'Logo Tecnologia'.");
-            console.log("Producto: Taza 'Logo Tecnologia'.");
-            taza();
-        } else if (opcionTazas == 3) {
-            alert("Producto: Taza 'Logo Universo'.");
-            console.log("Producto: Taza 'Logo Universo'.");
-            taza();
-        } else if (opcionTazas == 4) {
-            alert("Producto: Taza 'Logo Business'.");
-            console.log("Producto: Taza 'Logo Business'.");
-            taza();
-        }
-        cierreVenta();
-    }
-
-
-}
-operacionEleccion();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+    
