@@ -1,5 +1,4 @@
-
-
+/*
 //Saludo MARCA
 
 const MARCA = "Somos Ciencia Magazine"
@@ -68,7 +67,7 @@ class Revista {
 let edicionRevista = [];
 
 edicionRevista.push(new Revista("Enero", "Es nuestra primera edicion", 800));
-edicionRevista.push(new Revista("Marzo", "Aprende a Progrmar", 800));
+edicionRevista.push(new Revista("Marzo", "Aprende a Programar", 800));
 edicionRevista.push(new Revista("Mayo", "Planeta verde", 800));
 edicionRevista.push(new Revista("Julio", "James Webb", 800));
 edicionRevista.push(new Revista("Septiembre", " Criptomonedas en Argentina", 800));
@@ -153,9 +152,9 @@ function elegirOperacion() {
             cierreVenta();
             break;
         case 4:
-           alert("Las tazas tienen un costo de 1000$")
-           compraTaza();
-           cierreVenta();
+            alert("Las tazas tienen un costo de 1000$")
+            compraTaza();
+            cierreVenta();
             break;
 
         default:
@@ -181,7 +180,7 @@ function compraRevista() {
             console.log("Las revistas tiene un costo de $800 pesos");
 
             calcularCompraRevista();
-           
+
             break;
 
         case 2:
@@ -364,122 +363,126 @@ function compraGorra() {
     }
 }
 
-    function calcularCompraGorra() {
-        let cantidadGorras = prompt("Indica la cantidad de Gorras que deseas.")
-        console.log("Indica la cantidad de Gorras que deseas.");
+function calcularCompraGorra() {
+    let cantidadGorras = prompt("Indica la cantidad de Gorras que deseas.")
+    console.log("Indica la cantidad de Gorras que deseas.");
 
 
-        while (isNaN(parseInt(cantidadGorras))) {
-            alert("Necesitas agregar una cantidad numerica");
-            console.log("Necesitas agregar una cantidad numerica");
-            cantidadGorras = prompt("indica la cantidad de Revista que deseas");
-            console.log("indica la cantidad de Revista que deseas");
+    while (isNaN(parseInt(cantidadGorras))) {
+        alert("Necesitas agregar una cantidad numerica");
+        console.log("Necesitas agregar una cantidad numerica");
+        cantidadGorras = prompt("indica la cantidad de Revista que deseas");
+        console.log("indica la cantidad de Revista que deseas");
 
-        }
-        while ((parseInt(cantidadGorras) <= 0)) {
-            alert("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
-            console.log("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
-            cantidadGorras = prompt("indica la cantidad de Gorras que deseas");
-            console.log("indica la cantidad de Gorras que deseas");
-        }
-
-        let suma = parseInt(cantidadGorras) * ((edicionGorra[0].precio));
-
-        alert("El monto a pagar es " + suma);
-        console.log("El monto a pagar es " + suma);
-
-        let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-        console.log("Serias tan amable de indicar con cuanto vas a abonar?");
-
-
-        if (pago < suma) {
-            alert("Tu Saldo es insuficiente para la compra");
-            console.log("Tu Saldo es insuficiente para la compra");
-        } else if (pago >= suma) {
-            alert("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-            console.log("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-        }
+    }
+    while ((parseInt(cantidadGorras) <= 0)) {
+        alert("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
+        console.log("tienes que elegir al menos 1 Gorra para seguir la compra. Gracias");
+        cantidadGorras = prompt("indica la cantidad de Gorras que deseas");
+        console.log("indica la cantidad de Gorras que deseas");
     }
 
-        function compraTaza() {
-            let seleccionTaza = parseInt(prompt("Elije la taza de tu preferencia" + "\n\n" + "1.- " + (edicionTaza[0].logo) + "\n" + "2.- " + (edicionTaza[1].logo) + "\n" + "3.- " + (edicionTaza[2].logo) + "\n" + "4.- " + (edicionTaza[3].logo)));
-            switch (seleccionTaza) {
-                case 1:
-                    alert("Taza seleccionada: 'Logo Ciencia' ")
-                    calcularTaza();
-                    break;
-                    case 2:
-                        alert("Taza seleccionada: 'Logo Tecnología' ")
-                        calcularTaza();
-                    break;
-                    case 3 :
-                        alert("Taza seleccionada: 'Logo Universo' ")
-                        calcularTaza();
-                    break;
-                    case 4:
-                        alert("Taza seleccionada: 'Logo Business' ")
-                        calcularTaza();
-                    break;
-            
-            
-                default:
-                    console.log("Debes seleccionar una opción entre 1 y 4");
-                    alert("Debes seleccionar una opción entre 1 y 4");
-                    compraTaza();
-                    break;
-            }
-        }
-        function calcularTaza() {
-            let cantidadTazas = prompt("Indica la cantidad de Tazas que deseas.")
-            console.log("Indica la cantidad de Tazas que deseas.");
-    
-            while (isNaN(parseInt(cantidadTazas))) {
-                alert("Necesitas agregar una cantidad numerica");
-                console.log("Necesitas agregar una cantidad numerica");
-                cantidadTazas = prompt("indica la cantidad de Revista que deseas");
-                console.log("indica la cantidad de Revista que deseas");
-    
-            }
-            while ((parseInt(cantidadTazas) <= 0)) {
-                alert("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
-                console.log("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
-                cantidadTazas = prompt("indica la cantidad de Tazas que deseas");
-                console.log("indica la cantidad de Tazas que deseas");
-            }
-    
-            let suma = parseInt(cantidadTazas) * ((edicionTaza[0].precio));
-    
-            alert("El monto a pagar es " + suma);
-            console.log("El monto a pagar es " + suma);
-    
-            let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
-            console.log("Serias tan amable de indicar con cuanto vas a abonar?");
-    
-    
-            if (pago < suma) {
-                alert("Tu Saldo es insuficiente para la compra");
-                console.log("Tu Saldo es insuficiente para la compra");
-            } else if (pago >= suma) {
-                alert("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-                console.log("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
-            }
-        }
+    let suma = parseInt(cantidadGorras) * ((edicionGorra[0].precio));
+
+    alert("El monto a pagar es " + suma);
+    console.log("El monto a pagar es " + suma);
+
+    let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+    console.log("Serias tan amable de indicar con cuanto vas a abonar?");
 
 
-    
-        
-        function cierreVenta() {
-            let salida = prompt("Elige la opcion de tu preferencia: " + "\n" + "\na-Volver al menu" + "\nb-Salir");
-            console.log("Elige la opcion de tu preferencia: " + "\n" + "\na-Volver al menu" + "\nb-Salir");
-        
-            if (salida == volver) {
-                elegirOperacion();
-        
-            }else if (salida == salir) {
-                alert("Gracias por preferirnos sera hasta una proxima vez")
-                console.log("Gracias por preferirnos sera hasta una proxima vez");
-            }
-        
-        }
-        
-    
+    if (pago < suma) {
+        alert("Tu Saldo es insuficiente para la compra");
+        console.log("Tu Saldo es insuficiente para la compra");
+    } else if (pago >= suma) {
+        alert("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+        console.log("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+    }
+}
+
+function compraTaza() {
+    let seleccionTaza = parseInt(prompt("Elije la taza de tu preferencia" + "\n\n" + "1.- " + (edicionTaza[0].logo) + "\n" + "2.- " + (edicionTaza[1].logo) + "\n" + "3.- " + (edicionTaza[2].logo) + "\n" + "4.- " + (edicionTaza[3].logo)));
+    switch (seleccionTaza) {
+        case 1:
+            alert("Taza seleccionada: 'Logo Ciencia' ")
+            calcularTaza();
+            break;
+        case 2:
+            alert("Taza seleccionada: 'Logo Tecnología' ")
+            calcularTaza();
+            break;
+        case 3:
+            alert("Taza seleccionada: 'Logo Universo' ")
+            calcularTaza();
+            break;
+        case 4:
+            alert("Taza seleccionada: 'Logo Business' ")
+            calcularTaza();
+            break;
+
+
+        default:
+            console.log("Debes seleccionar una opción entre 1 y 4");
+            alert("Debes seleccionar una opción entre 1 y 4");
+            compraTaza();
+            break;
+    }
+}
+function calcularTaza() {
+    let cantidadTazas = prompt("Indica la cantidad de Tazas que deseas.")
+    console.log("Indica la cantidad de Tazas que deseas.");
+
+    while (isNaN(parseInt(cantidadTazas))) {
+        alert("Necesitas agregar una cantidad numerica");
+        console.log("Necesitas agregar una cantidad numerica");
+        cantidadTazas = prompt("indica la cantidad de Revista que deseas");
+        console.log("indica la cantidad de Revista que deseas");
+
+    }
+    while ((parseInt(cantidadTazas) <= 0)) {
+        alert("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
+        console.log("tienes que elegir al menos 1 Taza para seguir la compra. Gracias");
+        cantidadTazas = prompt("indica la cantidad de Tazas que deseas");
+        console.log("indica la cantidad de Tazas que deseas");
+    }
+
+    let suma = parseInt(cantidadTazas) * ((edicionTaza[0].precio));
+
+    alert("El monto a pagar es " + suma);
+    console.log("El monto a pagar es " + suma);
+
+    let pago = prompt("Serias tan amable de indicar con cuanto vas a abonar?");
+    console.log("Serias tan amable de indicar con cuanto vas a abonar?");
+
+
+    if (pago < suma) {
+        alert("Tu Saldo es insuficiente para la compra");
+        console.log("Tu Saldo es insuficiente para la compra");
+    } else if (pago >= suma) {
+        alert("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+        console.log("Muchas gracias " + " " + clienteUno.toString() + " Tu compra se finalizo con exito. Tu vuelto es " + (parseInt(pago) - parseInt(suma)));
+    }
+}
+
+
+
+
+function cierreVenta() {
+    let salida = prompt("Elige la opcion de tu preferencia: " + "\n" + "\na-Volver al menu" + "\nb-Salir");
+    console.log("Elige la opcion de tu preferencia: " + "\n" + "\na-Volver al menu" + "\nb-Salir");
+
+    if (salida == volver) {
+        elegirOperacion();
+    } else {
+        alert("Debes seleccionar una de las opciones indicada")
+        salida = prompt("Elige la opcion de tu preferencia: " + "\n" + "\na-Volver al menu" + "\nb-Salir");
+        console.log("Elige la opcion de tu preferencia: " + "\n" + "\na-Volver al menu" + "\nb-Salir");
+    }
+
+    if (salida == salir) {
+        alert("Gracias por preferirnos sera hasta una proxima vez")
+        console.log("Gracias por preferirnos sera hasta una proxima vez");
+    }
+}
+
+*/
