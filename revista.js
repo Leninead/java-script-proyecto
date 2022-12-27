@@ -10,6 +10,7 @@ const PRODUCTS = [
             id: "revista",
         },
         precio: 800,
+        
 },
 {
     id: "revista-02" ,
@@ -21,6 +22,7 @@ const PRODUCTS = [
         id: "revista",
     },
     precio: 800,
+    
 },
 {
     id: "revista-03" ,
@@ -32,6 +34,7 @@ const PRODUCTS = [
         id: "revista",
     },
     precio: 800,
+   
 },
 {
     id: "revista-04" ,
@@ -43,6 +46,7 @@ const PRODUCTS = [
         id: "revista",
     },
     precio: 800,
+   
 },
 {
     id: "revista-05" ,
@@ -54,6 +58,7 @@ const PRODUCTS = [
         id: "revista",
     },
     precio: 800,
+   
 },
 {
     id: "revista-06" ,
@@ -65,6 +70,7 @@ const PRODUCTS = [
         id: "revista",
     },
     precio: 800,
+    
 },
 ]
 
@@ -110,8 +116,18 @@ function actualizarBotonesAgregar() {
         boton.addEventListener("click", agregarAlCarrito)
     ));
 };
+let productosEnCarrito;
 
-const productosEnCarrito = [];
+const productosEnCarritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
+if (productosEnCarritoLS) {
+    productosEnCarrito = productosEnCarritoLS;
+    actualizarNumerito();
+
+}else {
+    productosEnCarrito = []
+}
+
+
 
 function agregarAlCarrito(e) {
     const idBoton = e.currentTarget.id;
@@ -136,6 +152,7 @@ function agregarAlCarrito(e) {
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc,card) => acc + card.cantidad, 0);
     numerito =   nuevoNumerito; 
+
     console.log( nuevoNumerito);
 }
 
