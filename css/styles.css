@@ -6,22 +6,35 @@
     font-family: 'Rubik', sans-serif;
 }
 
-h1,h2,h3,h4,h4,h5,h6, p, a, input,textarea{
+h1,
+h2,
+h3,
+h4,
+h4,
+h5,
+h6,
+p,
+a,
+input,
+textarea {
     margin: 0;
     padding: 0;
 }
-ul{
+
+ul {
     list-style-type: none;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
 /* Comienzo del Header y Nav */
-.contenedor-grid{
+.contenedor-grid {
     width: 100%;
 }
-header{
+
+header {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -33,40 +46,43 @@ header{
     height: 100%;
 
 }
+
 /* Comienzo del Main */
 h1 {
     text-align: center;
 }
 
-.container__carousel{
+.container__carousel {
     margin: 30px auto;
-    
-    width: 400px; 
+
+    width: 400px;
     height: 300px;
 }
 
 .img-carousel {
-  
-   
-    width: 400px ;
+
+
+    width: 400px;
     height: 300px;
 }
 
-.container_video{
+.container_video {
     margin: 30px auto;
-    
-    width: 400px; 
+
+    width: 400px;
     height: 300px;
 }
 
 /* Comiendo del Footer */
-.footer-contenedor{
+.footer-contenedor {
     height: 100px;
 }
-footer{
+
+footer {
     height: 100%;
     background-image: url(../img/index/universo-gif.gif);
 }
+
 .footer__h2 {
     color: white;
     text-align: center;
@@ -78,13 +94,16 @@ footer{
 /* Seccion Revista */
 
 
-.card { margin: 30px auto;
-        width: 18rem; }
+.card {
+    margin: 30px auto;
+    width: 18rem;
+}
 
 .card-body {
     margin: 0px auto;
     text-align: center;
 }
+
 .producto-revista {
     border-radius: 20px;
     border: 2px solid;
@@ -93,9 +112,10 @@ footer{
     font-size: 15px;
     padding: 7px;
     cursor: pointer;
-   
-  
+
+
 }
+
 .producto-revista:hover {
     color: blue;
     background-color: white;
@@ -105,46 +125,53 @@ footer{
 /* Aplicando css al Carrito */
 .carrito-productos {
     display: flex;
-   flex-direction: column;
+    flex-direction: column;
     gap: 1rem;
 }
 
-.carrito-producto{
-    display:flex;
+.carrito-producto {
+    display: flex;
     justify-content: space-between;
     justify-content: baseline;
-   margin: 20px;
-   background-color: rgba(109, 101, 101, 0.623);
-   color: rgba(48, 3, 42, 0.993);
-   border-radius: 10px;
-   align-items: center;
-   padding: .5rem;
-   padding-right: 1.5rem;
-   cursor: default;
+    margin: 20px;
+    background-color: rgba(109, 101, 101, 0.623);
+    color: rgba(48, 3, 42, 0.993);
+    border-radius: 10px;
+    align-items: center;
+    padding: .5rem;
+    padding-right: 1.5rem;
+    cursor: default;
 }
-.card-img-top{
+
+.card-img-top {
     height: 15rem;
 }
-.carrito-producto-imagen{
-   
+
+.carrito-producto-imagen {
+
     width: 4rem;
     border-radius: 1rem;
 }
+
 .carrito-producto small {
     font-size: .85;
 }
-.carrito-producto-eliminar{
+
+.carrito-producto-eliminar {
     border: 0;
     background-color: transparent;
     color: rgb(141, 11, 11);
 }
+
 .carrito-acciones {
     display: flex;
     justify-content: space-between;
 }
+
 .carrito-acciones-vaciar {
     border: 0;
-    background-color: rgba(109, 101, 101, 0.623); ;
+    background-color: rgba(109, 101, 101, 0.623);
+    ;
     padding: 1rem;
     border-radius: 1rem;
     color: rgba(48, 3, 42, 0.993);
@@ -153,22 +180,25 @@ footer{
     margin: 20px;
     font-weight: 700;
 }
-.carrito-acciones-derecha{
+
+.carrito-acciones-derecha {
     display: flex;
-    
+
 }
-.carrito-acciones-total{
+
+.carrito-acciones-total {
     display: flex;
     border: 0;
-    background-color: rgba(109, 101, 101, 0.623); 
+    background-color: rgba(109, 101, 101, 0.623);
     padding: 1rem;
     border-radius: 1rem;
     color: rgba(48, 3, 42, 0.993);
     text-transform: uppercase;
     cursor: default;
     margin: 20px;
-  
+
 }
+
 .carrito-acciones-comprar {
     border: 0;
     background-color: rgba(48, 3, 42, 0.993);
@@ -182,25 +212,30 @@ footer{
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
 }
-.carrito-comprado{
+
+.carrito-comprado {
     margin: 20px;
-    color:  rgba(48, 3, 42, 0.993);
+    color: rgba(48, 3, 42, 0.993);
     font-weight: 600;
 }
-.carrito-vacio{
+
+.carrito-vacio {
     margin: 20px;
-    color:  rgba(48, 3, 42, 0.993);
+    color: rgba(48, 3, 42, 0.993);
     font-weight: 600;
 }
-.disabled{
+
+.disabled {
     display: none;
 }
-.numerito{
-    background-color:  rgba(109, 101, 101, 0.623); 
-    color:  rgba(48, 3, 42, 0.993);
-    padding: .10rem ;
+
+.numerito {
+    background-color: rgba(109, 101, 101, 0.623);
+    color: rgba(48, 3, 42, 0.993);
+    padding: .10rem;
     border-radius: .25rem;
 }
+
 /*  
 .container-2 {
     display: flex;
