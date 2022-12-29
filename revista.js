@@ -88,7 +88,7 @@ function cargarProductos() {
         <div class="card-body">
           <h3 class="card-title">${card.titulo}</h3>
           <p class="card-text">${card.mes}</p>
-          <p class="card-text">${card.precio}</p>
+          <p class="card-text">${"$"} ${card.precio}</p>
           <a class="producto-revista" id= "${card.id}">Agregar</a>
         </div>`
             ;
