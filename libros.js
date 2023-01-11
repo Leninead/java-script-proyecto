@@ -3,7 +3,7 @@ const LIBROS = [
     {
         id: "libro-01",
         titulo: "Nuestro Planeta",
-      
+
         imagen: "../img/libros/nuiestro-planeta.jpg",
         categoria: {
             nombre: "Libros",
@@ -15,7 +15,7 @@ const LIBROS = [
     {
         id: "libro-02",
         titulo: "Explorando el Universo",
-        
+
         imagen: "../img/libros/explorando-universo.jpg",
         categoria: {
             nombre: "Libros",
@@ -27,7 +27,7 @@ const LIBROS = [
     {
         id: "libro-03",
         titulo: "Descubriendo el Bitcoin",
-      
+
         imagen: "../img/libros/bitcoin.webp",
         categoria: {
             nombre: "Libros",
@@ -39,7 +39,7 @@ const LIBROS = [
     {
         id: "libro-04",
         titulo: "Patrones de Diseño",
-        
+
         imagen: "../img/libros/patrones.png",
         categoria: {
             nombre: "Libros",
@@ -48,7 +48,7 @@ const LIBROS = [
         precio: 1600,
 
     },
- 
+
 ]
 
 const containerCardsLibros = document.querySelector("#container-cards-libros");
@@ -70,7 +70,7 @@ function cargarProductos() {
         </div>`
             ;
 
-            containerCardsLibros.append(div);
+        containerCardsLibros.append(div);
 
 
 
@@ -78,7 +78,7 @@ function cargarProductos() {
     });
     actualizarBotonesAgregar();
     console.log(botonesAgregar);
- 
+
 }
 
 cargarProductos();
@@ -127,3 +127,22 @@ function actualizarNumerito() {
     console.log(nuevoNumerito);
 }
 
+toastify = document.querySelector("#container-cards-libros");
+
+toastify.addEventListener("click", () => {
+    Toastify({
+        text: "Libro agregado al carrito",
+        duration: 4000,
+        destination: "../pages/car.html",
+        newWindow: false,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to left, rgba(109, 101, 101, 0.623), rgba(48, 3, 42, 0.993))",
+
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
+})

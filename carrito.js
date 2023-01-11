@@ -77,6 +77,7 @@ function actualizarBotonesEliminar() {
     })
 }
 
+
 function eliminarDelCarrito(e) {
     const idBoton = e.currentTarget.id;
 

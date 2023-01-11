@@ -2,7 +2,7 @@
 const GORRAS = [
     {
         id: "gorra-01",
-        titulo:"Edicion: 'Universo'",
+        titulo: "Edicion: 'Universo'",
         color: "Negra",
         imagen: "../img/gorras/universo-tazas.jpg",
         categoria: {
@@ -75,14 +75,14 @@ function cargarProductos() {
         div.innerHTML =
             `<img src="${card.imagen}" class="card-img-top" alt="${card.edicion}">
         <div class="card-body">
-          <h3 class="card-title">${card. titulo}</h3>
-          <p class="card-text">${card. color}</p>
+          <h3 class="card-title">${card.titulo}</h3>
+          <p class="card-text">${card.color}</p>
           <p class="card-text">${"$"} ${card.precio}</p>
           <a class="producto-gorra"" id= "${card.id}">Agregar</a>
         </div>`
             ;
 
-            containerCardsGorras.append(div);
+        containerCardsGorras.append(div);
 
 
 
@@ -145,4 +145,25 @@ function actualizarNumerito() {
     console.log(nuevoNumerito);
 }
 
+toastify = document.querySelector("#container-cards-gorras");
 
+toastify.addEventListener("click", () => {
+
+    Toastify({
+        text: "Gorra agregada al carrito",
+        duration: 4000,
+        destination: "../pages/car.html",
+        newWindow: false,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to left, rgba(109, 101, 101, 0.623), rgba(48, 3, 42, 0.993))",
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
+
+
+
+})

@@ -3,25 +3,25 @@ const TAZAS = [
     {
         id: "taza-01",
         titulo: "Logo Ciencia",
-      
+
         imagen: "../img/tazas/logo-ciencia.jpg",
-       
+
         precio: 1200,
 
     },
     {
         id: "taza-02",
         titulo: "Logo tecnologia",
-        
+
         imagen: "../img/tazas/tecnologia.jpg",
-       
+
         precio: 1200,
 
     },
     {
         id: "taza-03",
         titulo: "Logo Nuestro Universo",
-      
+
         imagen: "../img/tazas/universo.jpg",
         categoria: {
             nombre: "Libros",
@@ -33,13 +33,13 @@ const TAZAS = [
     {
         id: "taza-04",
         titulo: "Logo Business",
-        
+
         imagen: "../img/tazas/bussines.jpg",
-       
+
         precio: 1200,
 
     },
- 
+
 ]
 
 const containerCardsLibros = document.querySelector("#container-cards-tazas");
@@ -61,7 +61,7 @@ function cargarProductos() {
         </div>`
             ;
 
-            containerCardsLibros.append(div);
+        containerCardsLibros.append(div);
 
 
 
@@ -69,7 +69,7 @@ function cargarProductos() {
     });
     actualizarBotonesAgregar();
     console.log(botonesAgregar);
- 
+
 }
 
 cargarProductos();
@@ -118,3 +118,23 @@ function actualizarNumerito() {
     console.log(nuevoNumerito);
 }
 
+
+toastify = document.querySelector("#container-cards-tazas");
+
+toastify.addEventListener("click", () => {
+    Toastify({
+        text: "Taza agregada al carrito",
+        duration: 4000,
+        destination: "../pages/car.html",
+        newWindow: false,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to left, rgba(109, 101, 101, 0.623), rgba(48, 3, 42, 0.993))",
+
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
+})
