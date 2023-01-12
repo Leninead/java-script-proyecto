@@ -129,3 +129,24 @@ function actualizarNumerito() {
 }
 
 actualizarNumerito();
+
+toastify = document.querySelector("#carrito-acciones-comprar");
+
+toastify.addEventListener("click", () => {
+
+    Toastify({
+        text: "Felicidades por tu compra :)",
+        duration: 4000,
+        destination: "../pages/car.html",
+        newWindow: false, 
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to left, rgba(109, 101, 101, 0.623), rgba(48, 3, 42, 0.993))",
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
+})
+
