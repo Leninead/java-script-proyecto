@@ -117,3 +117,15 @@ function comprarCarrito() {
     contenedorCarritoComprado.classList.remove("disabled");
 
 }
+
+
+
+function actualizarNumerito() {
+
+    let nuevoNumerito = productosEnCarrito.reduce((acc, card) => acc + card.cantidad, 0);
+   numeroCarrito.innerText = nuevoNumerito;
+
+    console.log(nuevoNumerito);
+}
+
+actualizarNumerito();

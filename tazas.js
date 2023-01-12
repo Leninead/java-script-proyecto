@@ -112,9 +112,9 @@ function agregarAlCarrito(e) {
 }
 
 function actualizarNumerito() {
+  
     let nuevoNumerito = productosEnCarrito.reduce((acc, card) => acc + card.cantidad, 0);
-    numerito = nuevoNumerito;
-
+    numeroCarrito.innerText = nuevoNumerito;
     console.log(nuevoNumerito);
 }
 
