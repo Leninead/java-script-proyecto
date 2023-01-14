@@ -1,0 +1,10 @@
+[
+    {"id": "Llavero1", "nombre": "LLavero Universo", "precio": 500, "imagen": "../img/novedades/llavero-universo.jpg", "disponible": "Disponible en Febrero"},
+    {"id": "Llavero2", "nombre": "LLavero Planeta tierra", "precio": 500, "imagen": "../img/novedades/llavero-tierra.jpg", "disponible": "Disponible en Febrero"},
+    {"id": "Llavero3", "nombre": "LLavero Criptomoneda", "precio": 500, "imagen": "../img/novedades/llavero-bitcoin.jpg", "disponible": "Disponible en Febrero"},
+    {"id": "Llavero4", "nombre": "LLavero Albert Einstein", "precio": 500, "imagen": "../img/novedades/llavero-einsten.jpg", "disponible": "Disponible en Febrero"},
+
+    {"id": "Lapicera", "nombre": "Lapicera Astronauta", "precio": 600, "imagen": "../img/novedades/lapicera-astronauta.jpg", "disponible": "Disponible en Marzo"},
+    {"id": "Carpeta", "nombre": "Carpeta Universo", "precio": 1000, "imagen": "../img/novedades/carpeta-universo.png", "disponible": "Disponible en Marzo"}
+]
+
