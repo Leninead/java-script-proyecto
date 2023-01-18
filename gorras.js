@@ -78,7 +78,7 @@ function cargarProductos() {
           <h3 class="card-title">${card.titulo}</h3>
           <p class="card-text">${card.color}</p>
           <p class="card-text">${"$"} ${card.precio}</p>
-          <a class="producto-gorra"" id= "${card.id}">Agregar</a>
+          <a class="producto-gorra" id= "${card.id}">Agregar</a>
         </div>`
             ;
 
@@ -137,7 +137,6 @@ function agregarAlCarrito(e) {
 
 
 
-
 function actualizarNumerito() {
   
     let nuevoNumerito = productosEnCarrito.reduce((acc, card) => acc + card.cantidad, 0);
@@ -146,9 +145,16 @@ function actualizarNumerito() {
     console.log(nuevoNumerito);
 }
 
+
+
+
+
+
 toastify = document.querySelector("#container-cards-gorras");
 
-toastify.addEventListener("click", () => {
+
+
+toastify.addEventListener("click",() => {
 
     Toastify({
         text: "Gorra agregada al carrito",
