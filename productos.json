@@ -1,12 +1,12 @@
 [
-    {"id": "Llavero1", "nombre": "LLavero Universo", "precio": 500, "imagen": "../img/novedades/llavero-universo.jpg", "disponible": "Disponible en Febrero"},
-    {"id": "Llavero2", "nombre": "LLavero Planeta tierra", "precio": 500, "imagen": "../img/novedades/llavero-tierra.jpg", "disponible": "Disponible en Febrero"},
-    {"id": "Llavero3", "nombre": "LLavero Criptomoneda", "precio": 500, "imagen": "../img/novedades/llavero-bitcoin.jpg", "disponible": "Disponible en Febrero"},
-    {"id": "Llavero4", "nombre": "LLavero Albert Einstein", "precio": 500, "imagen": "../img/novedades/llavero-einsten.jpg", "disponible": "Disponible en Febrero"},
+    {"id": "Llavero1", "nombre": "LLavero Universo", "precio": 500, "imagen": "https://sc01.alicdn.com/kf/H1d30510044e749438fe79d5f64d7a145h/234705058/H1d30510044e749438fe79d5f64d7a145h.jpg", "disponible": "Disponible en Febrero"},
+    {"id": "Llavero2", "nombre": "LLavero Planeta tierra", "precio": 500, "imagen": "https://astromania.co/18-large_default/llavero-la-tierra.jpg", "disponible": "Disponible en Febrero"},
+    {"id": "Llavero3", "nombre": "LLavero Criptomoneda", "precio": 500, "imagen": "https://http2.mlstatic.com/D_NQ_NP_723221-MLA47598404427_092021-O.webp", "disponible": "Disponible en Febrero"},
+    {"id": "Llavero4", "nombre": "LLavero Albert Einstein", "precio": 500, "imagen": "https://m.media-amazon.com/images/I/61yoepCBMKL._AC_UF1000,1000_QL80_.jpg", "disponible": "Disponible en Febrero"},
 
-    {"id": "Lapicera", "nombre": "Lapicera Astronauta", "precio": 600, "imagen": "../img/novedades/lapicera-astronauta.jpg", "disponible": "Disponible en Marzo"},
-    {"id": "Carpeta", "nombre": "Carpeta Universo", "precio": 1000, "imagen": "../img/novedades/carpeta-universo.png", "disponible": "Disponible en Marzo"},
-    {"id": "Cuaderno", "nombre": "Cuaderno Planeta", "precio": 1200, "imagen": "../img/novedades/cuaderno.jpg", "disponible": "Disponible en Marzo", "agregar": "Encargar"}
+    {"id": "Lapicera", "nombre": "Lapicera Astronauta", "precio": 600, "imagen": "https://http2.mlstatic.com/D_NQ_NP_653302-MLA52992079119_122022-O.webp", "disponible": "Disponible en Marzo"},
+    {"id": "Carpeta", "nombre": "Carpeta Universo", "precio": 1000, "imagen": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/1ac02218-4615-48c2-8328-c4fa9ff44b3f/d5oqw4r-1a3c22f0-45cc-48c4-8e85-90709c21e793.png", "disponible": "Disponible en Marzo"},
+    {"id": "Cuaderno", "nombre": "Cuaderno Planeta", "precio": 1200, "imagen": "https://rlv.zcache.es/cuaderno_planeta_primer_icono_ecologico_happy_earth_clipar-r21619a41fe4e407193d8971e1aeae9f6_ambg4_8byvr_307.jpg", "disponible": "Disponible en Marzo", "agregar": "Encargar"}
 
 ]
 
