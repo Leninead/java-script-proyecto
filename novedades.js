@@ -63,11 +63,11 @@ fetch("../productos.json")
             
                
 
-                await time(0000)
+                await time(1000)
                 showProducts(data);
 
                 
-                await time(4000)
+               
              
         
             }catch(error){
@@ -80,9 +80,6 @@ fetch("../productos.json")
         
         encargar();
       
-   
-   
-    
 
   
 })
@@ -101,7 +98,7 @@ function showProducts(products) {
         <h3 class="card-title">${card.nombre}</h3>
         <p class="card-text">${"$"} ${card.precio}</p>
         <p class="card-text">${card.disponible}</p>
-        <a href="../pages/formulario.html" class="producto-encargar" id= "${card.id}">Encargar</a>
+       
         </div>`
         ;
         containerCardsNovedades.append(div);
@@ -110,6 +107,52 @@ function showProducts(products) {
      
      });
 }
+
+const LISTADO = [
+
+   {id: "book-1",
+    titulo:   "El Aleph",
+   nombre: "Jorge Luis Borges ", },
+
+   
+   {id: "book-2",
+    titulo:   "Rayuela",
+   nombre:  "Julio Cortázar", } ,
+
+   {id: "book-3",
+   titulo:  "La invención de Morel",
+  nombre:  "Jorge Luis Borges ", } ,
+
+  {id: "book-4",
+  titulo:   "Sobre héroes y tumbas",
+ nombre:  "Ernesto Sábato ", } ,
+
+
+
+]
+
+
+function listProducts() {
+
+    LISTADO.forEach(  card => {
+        const div= document.createElement("div");
+        div.classList.add("card");
+        div.innerHTML =
+        
+        `
+       
+       
+      <li>${"Titulo:"} ${ card.titulo} ${"Autor:"} ${  card.nombre}</li> 
+      
+       
+       `;
+       containerCardsNovedades.append(div);
+    })
+}
+
+listProducts()
+
+
 
 
 
@@ -124,7 +167,7 @@ toastify.addEventListener("click",() => {
     Toastify({
         text: "Click aqui para encargar",
         duration: 4000,
-        destination: "../pages/formulario.html",
+        destination: "",
         newWindow: false,
         close: true,
         gravity: "bottom", // `top` or `bottom`
