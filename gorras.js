@@ -138,7 +138,7 @@ function agregarAlCarrito(e) {
 
 
 function actualizarNumerito() {
-  
+
     let nuevoNumerito = productosEnCarrito.reduce((acc, card) => acc + card.cantidad, 0);
     numeroCarrito.innerText = nuevoNumerito;
 
@@ -154,7 +154,7 @@ toastify = document.querySelector("#container-cards-gorras");
 
 
 
-toastify.addEventListener("click",() => {
+toastify.addEventListener("click", () => {
 
     Toastify({
         text: "Gorra agregada al carrito",

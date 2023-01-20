@@ -32,7 +32,7 @@ function agregarAlCarrito(e) {
 function actualizarNumerito() {
 
     let nuevoNumerito = productosEnCarrito.reduce((acc, card) => acc + card.cantidad, 0);
-   numeroCarrito.innerText = nuevoNumerito;
+    numeroCarrito.innerText = nuevoNumerito;
 
     console.log(nuevoNumerito);
 }
@@ -45,44 +45,44 @@ const containerCardsNovedades = document.querySelector("#container-cards-novedad
 
 
 fetch("../productos.json")
-.then(response =>  response.json())
+    .then(response => response.json())
 
-.then(data => {
-   
+    .then(data => {
+
 
         let stocks = true;
 
         function time(ms) {
-            return new Promise ((resolve, reject) => {
-                stocks?setTimeout(resolve,ms):reject(console.log("sin stock"))
+            return new Promise((resolve, reject) => {
+                stocks ? setTimeout(resolve, ms) : reject(console.log("sin stock"))
             })
         }
-        
-        async function encargar() {
-            try{
-            
-               
 
-                await time(1000)
+        async function encargar() {
+            try {
+
+
+
+                await time(0000)
                 showProducts(data);
 
-                
-               
-             
-        
-            }catch(error){
-              
+
+
+
+
+            } catch (error) {
+
             }
-            finally{
+            finally {
                 console.log("cierre de ventas por dia");
             }
         }
-        
-        encargar();
-      
 
-  
-})
+        encargar();
+
+
+
+    })
 
 
 
@@ -93,39 +93,50 @@ function showProducts(products) {
         const div = document.createElement("div");
         div.classList.add("card");
         div.innerHTML =
-        `<img src= "${card.imagen}" class="card-img-top" alt="">
+
+            `
+        <img src= "${card.imagen}" class="card-img-top" alt="">
         <div class="card-body"> 
         <h3 class="card-title">${card.nombre}</h3>
         <p class="card-text">${"$"} ${card.precio}</p>
         <p class="card-text">${card.disponible}</p>
+        <a class="producto-revista" id= "${card.id}">Encargar</a>
        
         </div>`
-        ;
+            ;
         containerCardsNovedades.append(div);
-      
-      
-     
-     });
+
+
+
+    });
 }
 
 const LISTADO = [
 
-   {id: "book-1",
-    titulo:   "El Aleph",
-   nombre: "Jorge Luis Borges ", },
+    {
+        id: "book-1",
+        titulo: "El Aleph",
+        nombre: "Jorge Luis Borges ",
+    },
 
-   
-   {id: "book-2",
-    titulo:   "Rayuela",
-   nombre:  "Julio Cortázar", } ,
 
-   {id: "book-3",
-   titulo:  "La invención de Morel",
-  nombre:  "Jorge Luis Borges ", } ,
+    {
+        id: "book-2",
+        titulo: "Rayuela",
+        nombre: "Julio Cortázar",
+    },
 
-  {id: "book-4",
-  titulo:   "Sobre héroes y tumbas",
- nombre:  "Ernesto Sábato ", } ,
+    {
+        id: "book-3",
+        titulo: "La invención de Morel",
+        nombre: "Jorge Luis Borges ",
+    },
+
+    {
+        id: "book-4",
+        titulo: "Sobre héroes y tumbas",
+        nombre: "Ernesto Sábato ",
+    },
 
 
 
@@ -134,54 +145,43 @@ const LISTADO = [
 
 function listProducts() {
 
-    LISTADO.forEach(  card => {
-        const div= document.createElement("div");
+    LISTADO.forEach(card => {
+        const div = document.createElement("div");
         div.classList.add("card");
         div.innerHTML =
-        
-        `
+
+            `
        
        
-      <li>${"Titulo:"} ${ card.titulo} ${"Autor:"} ${  card.nombre}</li> 
+      <li>${"Titulo:"} ${card.titulo} ${"Autor:"} ${card.nombre}</li> 
       
        
        `;
-       containerCardsNovedades.append(div);
+        containerCardsNovedades.append(div);
     })
 }
 
 listProducts()
 
 
+const sweetAlert = document.querySelector("#container-cards-novedades");
+sweetAlert.addEventListener("click",
+
+    async function email() {
+        const { value: email } = await Swal.fire({
+            title: 'Podes encargar tus productos favoritos',
+            input: 'email',
+            inputLabel: 'Direccion de email',
+            inputPlaceholder: 'Ingresa tu direccion de email'
+        })
+
+        if (email) {
+            Swal.fire(`Te enviaremos un email de confirmacion a: ${email}`)
+        }
+    }
 
 
 
+)
 
 
-toastify = document.querySelector("#container-cards-novedades");
-
-
-
-toastify.addEventListener("click",() => {
-
-    Toastify({
-        text: "Click aqui para encargar",
-        duration: 4000,
-        destination: "",
-        newWindow: false,
-        close: true,
-        gravity: "bottom", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "linear-gradient(to left, rgba(109, 101, 101, 0.623), rgba(48, 3, 42, 0.993))",
-        },
-        onClick: function () { } // Callback after click
-    }).showToast();
-
-
-
-})
-
-
-  

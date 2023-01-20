@@ -123,25 +123,25 @@ function comprarCarrito() {
 function actualizarNumerito() {
 
     let nuevoNumerito = productosEnCarrito.reduce((acc, card) => acc + card.cantidad, 0);
-   numeroCarrito.innerText = nuevoNumerito;
+    numeroCarrito.innerText = nuevoNumerito;
 
     console.log(nuevoNumerito);
 }
 
 actualizarNumerito();
 
-toastify = document.querySelector("#carrito-acciones-comprar");
+toastify = document.querySelector("#carrito-acciones-vaciar");
 
 toastify.addEventListener("click", () => {
 
     Toastify({
-        text: "Felicidades por tu compra :)",
+        text: "Tú carrito esta vacio",
         duration: 4000,
         destination: "../pages/car.html",
-        newWindow: false, 
+        newWindow: false,
         close: true,
         gravity: "bottom", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
+        position: "center", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
             background: "linear-gradient(to left, rgba(109, 101, 101, 0.623), rgba(48, 3, 42, 0.993))",
@@ -149,4 +149,43 @@ toastify.addEventListener("click", () => {
         onClick: function () { } // Callback after click
     }).showToast();
 })
+
+const sweetAlertCarrito = document.querySelector("#carrito-acciones-comprar");
+sweetAlertCarrito.addEventListener("click", () => {
+
+
+    Swal.fire({
+        title: 'Felicidades por tu compra',
+        text: 'Inscribite a nuestro Newsletter',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+
+    }).then((result) => {
+
+
+        if (result.isConfirmed) {
+            newsletter()
+
+            async function newsletter() {
+                const { value: newsletter } = await Swal.fire({
+                    title: 'Inscribite a nuestro Newsletter ',
+                    input: 'email',
+                    inputLabel: 'Se parte de nuestra comunidad',
+                    inputPlaceholder: 'Ingresa tu direccion de email',
+
+                })
+
+                if (newsletter) {
+                    Swal.fire(`Te enviaremos un email de confirmacion a: ${newsletter}`)
+
+                }
+            }
+
+
+        }
+
+    })
+
+})
+
 

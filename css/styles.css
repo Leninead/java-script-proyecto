@@ -288,21 +288,6 @@ footer {
 }
 
 
-.producto-encargar {    border-radius: 20px;
-    border: 2px solid;
-    background-color: blue;
-    color: white;
-    font-size: 15px;
-    padding: 7px;
-    cursor: pointer;
-    margin-top: 5px;
-}
-
-.producto-encargar {    color: blue;
-    background-color: white;
-    cursor: pointer;
-    margin-top: 10px;
-}
 
 .novedades_h2 {
     color: rgba(48, 3, 42, 0.993);
